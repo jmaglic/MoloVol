@@ -19,10 +19,10 @@ void Space::placeAtomsInGrid(const AtomTree& atomtree){
   for(size_t x = 0; x < n_gridsteps[0]; x++){
     for(size_t y = 0; y < n_gridsteps[1]; y++){
       for(size_t z = 0; z < n_gridsteps[2]; z++){
-		// origin of the cell has to be offset by half the grid size
+    // origin of the cell has to be offset by half the grid size
         std::array<double,3> vxl_pos = {vxl_origin[0] + vxl_dist/2 + vxl_dist * x,
-										vxl_origin[1] + vxl_dist/2 + vxl_dist * y,
-										vxl_origin[2] + vxl_dist/2 + vxl_dist * z};
+                    vxl_origin[1] + vxl_dist/2 + vxl_dist * y,
+                    vxl_origin[2] + vxl_dist/2 + vxl_dist * z};
         getElement(x,y,z).determineType(vxl_pos, grid_size, max_depth, atomtree);
       }
     }
@@ -64,8 +64,80 @@ std::array<double,3> Space::getSize(){
   return size;
 }
 
+/**
+ Recursevly fill a matrix
+ @param matrix a reference to the matrix, which is written
+ @param toplevel the current top level voxel
+ @param offx offset in matrix
+ @param offy offset in matrix
+ @param offz offset in matrix
+ @param dimx range
+ @param dimy range
+ @param dimz range
+ 
+ 
+ */
+void Space::treetomatrix(std::vector<uint8_t> &matrix, Voxel& toplevel, int offx, int offy, int offz, int dimx, int dimy, int dimz){
+  for (int i= 0;i<8;++i){
+    auto type = toplevel.getType();
+    if (type=='m'){
+      short xhalf = i%2;
+      short yhalf = (i%4) >= 2;
+      short zhalf = i>=4;
+      auto element = toplevel.get(xhalf,yhalf,zhalf);
+      treetomatrix(matrix,
+             element,
+             offx+dimx/2*xhalf,
+             offy+dimy/2*yhalf,
+             offz+dimz/2*zhalf,
+             dimx/2, dimy/2, dimz/2);
+    } else if (type=='a'){
+      int resX = this->getResolution()[0];
+	  int resY = this->getResolution()[1];
+      for (int z=offz; z<offz+dimz; ++z){
+        for (int y=offy;y<offy+dimy; ++y){
+          for (int x=offx; x<offx+dimx; ++x){
+            matrix[z*resX*resY+y*resX+x] = 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+std::vector<uint8_t> Space::getMatrix(){
+  auto chunkres = pow(2,max_depth);
+  //target matrix for tree to vector conversion hold three dimensions with this size
+  std::vector<uint8_t> gridmatrix(n_gridsteps[0]*n_gridsteps[1]*n_gridsteps[2]*pow(chunkres,3),0);
+  //number of cells on a chunk in one dimension
+  for(size_t x = 0; x < n_gridsteps[0]; x++){
+    for(size_t y = 0; y < n_gridsteps[1]; y++){
+      for(size_t z = 0; z < n_gridsteps[2]; z++){
+        treetomatrix(gridmatrix,
+             getElement(x, y, z),
+             x*chunkres,
+             y*chunkres,
+             z*chunkres,
+             chunkres,
+             chunkres,
+             chunkres
+        );
+      }
+    }
+  }
+  return gridmatrix;
+}
+
+//the number of voxels at lowest tree level in one dimension
+std::array<unsigned int,3> Space::getResolution() const{
+	return {static_cast<unsigned int>(n_gridsteps[0]*pow(2,max_depth)),
+		static_cast<unsigned int>(n_gridsteps[1]*(int)pow(2,max_depth)),
+		static_cast<unsigned int>(n_gridsteps[2]*(int)pow(2,max_depth))};
+}
+
 Voxel& Space::getElement(const size_t &i){
-  assert(i < n_gridsteps[0] * n_gridsteps[1] * n_gridsteps[2]); 
+  assert(i < n_gridsteps[0] * n_gridsteps[1] * n_gridsteps[2]);
   return grid[i];
 }
 
@@ -83,8 +155,8 @@ void Space::printGrid(){
   int x_min = 0;
   int y_min = 0;
   
-  int x_max = ((n_gridsteps[0] >= 25)? 25: n_gridsteps[0]);
-  int y_max = ((n_gridsteps[1] >= 25)? 25: n_gridsteps[1]);
+  auto x_max = ((n_gridsteps[0] >= 25)? 25: n_gridsteps[0]);
+  auto y_max = ((n_gridsteps[1] >= 25)? 25: n_gridsteps[1]);
 
   size_t z = 0;
   std::cout << "Enter 'q' to quit; 'w', 'a', 's', 'd' for directional input; 'c' to continue in z direction; 'r' to go back in z direction" << std::endl;

@@ -15,6 +15,7 @@ class Ctrl{
     void registerView(MainFrame* inp_gui);
     static Ctrl* getInstance();
     void notifyUser(std::string str);
+	Model* getModel();
 
   private:
     // consider making static pointer for model

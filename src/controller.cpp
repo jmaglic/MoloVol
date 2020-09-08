@@ -101,3 +101,7 @@ void Ctrl::notifyUser(std::string str){
   str = "\n" + str;
   gui->appendOutput(str);
 }
+
+Model* Ctrl::getModel(){
+	return this->current_calculation;
+}

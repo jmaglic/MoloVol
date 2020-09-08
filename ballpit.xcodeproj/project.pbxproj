@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A664904C24F8164F006DD0AA /* misc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A664904B24F8164F006DD0AA /* misc.cpp */; };
+		A6D93AA924F1224A00D34026 /* renderkernel.cl in Sources */ = {isa = PBXBuildFile; fileRef = A6D93AA324F1202C00D34026 /* renderkernel.cl */; };
+		A6D93AAE24F12A2F00D34026 /* wxVolumeRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6D93AAD24F12A2F00D34026 /* wxVolumeRenderer.cpp */; };
 		A6E1C6F224EF1BA100E4CC1D /* space.h in Sources */ = {isa = PBXBuildFile; fileRef = A6E1C6DB24EF14CE00E4CC1D /* space.h */; };
 		A6E1C6F324EF1BA100E4CC1D /* misc.h in Sources */ = {isa = PBXBuildFile; fileRef = A6E1C6DC24EF14CE00E4CC1D /* misc.h */; };
 		A6E1C6F424EF1BA100E4CC1D /* test.h in Sources */ = {isa = PBXBuildFile; fileRef = A6E1C6DD24EF14CE00E4CC1D /* test.h */; };
@@ -47,6 +50,10 @@
 /* Begin PBXFileReference section */
 		A6251EAA24997354002B3B12 /* inputfile */ = {isa = PBXFileReference; lastKnownFileType = folder; path = inputfile; sourceTree = "<group>"; };
 		A62DCA7324ED9D9700EF2D2E /* ballpitcltool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ballpitcltool; sourceTree = BUILT_PRODUCTS_DIR; };
+		A664904B24F8164F006DD0AA /* misc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = misc.cpp; sourceTree = "<group>"; };
+		A6D93AA324F1202C00D34026 /* renderkernel.cl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.opencl; path = renderkernel.cl; sourceTree = "<group>"; };
+		A6D93AAC24F12A2400D34026 /* wxVolumeRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wxVolumeRenderer.h; sourceTree = "<group>"; };
+		A6D93AAD24F12A2F00D34026 /* wxVolumeRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wxVolumeRenderer.cpp; sourceTree = "<group>"; };
 		A6E1C6CE24EF14CE00E4CC1D /* base_init.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = base_init.cpp; sourceTree = "<group>"; };
 		A6E1C6CF24EF14CE00E4CC1D /* voxel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = voxel.cpp; sourceTree = "<group>"; };
 		A6E1C6D024EF14CE00E4CC1D /* base_constr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = base_constr.cpp; sourceTree = "<group>"; };
@@ -91,6 +98,7 @@
 				A62DCA7424ED9D9700EF2D2E /* cltool */,
 				A62DCA3724ED9C2500EF2D2E /* Products */,
 				A6E1C6DA24EF14CE00E4CC1D /* include */,
+				A6D93AA224F1202C00D34026 /* res */,
 				A6E1C6CD24EF14CE00E4CC1D /* src */,
 			);
 			sourceTree = "<group>";
@@ -111,11 +119,21 @@
 			path = cltool;
 			sourceTree = "<group>";
 		};
+		A6D93AA224F1202C00D34026 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				A6D93AA324F1202C00D34026 /* renderkernel.cl */,
+			);
+			path = res;
+			sourceTree = SOURCE_ROOT;
+		};
 		A6E1C6CD24EF14CE00E4CC1D /* src */ = {
 			isa = PBXGroup;
 			children = (
+				A664904B24F8164F006DD0AA /* misc.cpp */,
 				A6E1C6CE24EF14CE00E4CC1D /* base_init.cpp */,
 				A6E1C6CF24EF14CE00E4CC1D /* voxel.cpp */,
+				A6D93AAD24F12A2F00D34026 /* wxVolumeRenderer.cpp */,
 				A6E1C6D024EF14CE00E4CC1D /* base_constr.cpp */,
 				A6E1C6D124EF14CE00E4CC1D /* test.cpp */,
 				A6E1C6D224EF14CE00E4CC1D /* base_guicontrol.cpp */,
@@ -137,6 +155,7 @@
 				A6E1C6DC24EF14CE00E4CC1D /* misc.h */,
 				A6E1C6DD24EF14CE00E4CC1D /* test.h */,
 				A6E1C6DE24EF14CE00E4CC1D /* voxel.h */,
+				A6D93AAC24F12A2400D34026 /* wxVolumeRenderer.h */,
 				A6E1C6DF24EF14CE00E4CC1D /* controller.h */,
 				A6E1C6E024EF14CE00E4CC1D /* atom.h */,
 				A6E1C6E124EF14CE00E4CC1D /* special_chars.h */,
@@ -164,6 +183,20 @@
 			name = makefile;
 			passBuildSettingsInEnvironment = 1;
 			productName = ballpit;
+		};
+		A6D93AA524F121A600D34026 /* compile shader */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)  -o res/renderkernel res/renderkernel.cl -framework OpenCL";
+			buildConfigurationList = A6D93AA624F121A600D34026 /* Build configuration list for PBXLegacyTarget "compile shader" */;
+			buildPhases = (
+			);
+			buildToolPath = gcc;
+			buildWorkingDirectory = /Users/benediktvogler/Projekte/ballpit;
+			dependencies = (
+			);
+			name = "compile shader";
+			passBuildSettingsInEnvironment = 1;
+			productName = "compile shader";
 		};
 /* End PBXLegacyTarget section */
 
@@ -199,6 +232,9 @@
 					A62DCA7224ED9D9700EF2D2E = {
 						CreatedOnToolsVersion = 11.6;
 					};
+					A6D93AA524F121A600D34026 = {
+						CreatedOnToolsVersion = 11.6;
+					};
 				};
 			};
 			buildConfigurationList = A6251E9924997354002B3B12 /* Build configuration list for PBXProject "ballpit" */;
@@ -216,6 +252,7 @@
 			targets = (
 				A6251E9A24997354002B3B12 /* makefile */,
 				A62DCA7224ED9D9700EF2D2E /* ballpitcltool */,
+				A6D93AA524F121A600D34026 /* compile shader */,
 			);
 		};
 /* End PBXProject section */
@@ -234,10 +271,13 @@
 				A6E1C6F824EF1BA100E4CC1D /* special_chars.h in Sources */,
 				A6E1C6F924EF1BA100E4CC1D /* atomtree.h in Sources */,
 				A6E1C6FA24EF1BA100E4CC1D /* model.h in Sources */,
+				A664904C24F8164F006DD0AA /* misc.cpp in Sources */,
+				A6D93AAE24F12A2F00D34026 /* wxVolumeRenderer.cpp in Sources */,
 				A6E1C6FB24EF1BA100E4CC1D /* exception.h in Sources */,
 				A6E1C6FC24EF1BA100E4CC1D /* base.h in Sources */,
 				A6E1C6FD24EF1BA100E4CC1D /* base_init.cpp in Sources */,
 				A6E1C6FE24EF1BA100E4CC1D /* voxel.cpp in Sources */,
+				A6D93AA924F1224A00D34026 /* renderkernel.cl in Sources */,
 				A6E1C6FF24EF1BA100E4CC1D /* base_constr.cpp in Sources */,
 				A6E1C70024EF1BA100E4CC1D /* test.cpp in Sources */,
 				A6E1C70124EF1BA100E4CC1D /* base_guicontrol.cpp in Sources */,
@@ -555,6 +595,74 @@
 			};
 			name = Release;
 		};
+		A6D93AA724F121A600D34026 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 8DQDR268Z4;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A6D93AA824F121A600D34026 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 8DQDR268Z4;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -581,6 +689,15 @@
 			buildConfigurations = (
 				A62DCA7824ED9D9700EF2D2E /* Debug */,
 				A62DCA7924ED9D9700EF2D2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6D93AA624F121A600D34026 /* Build configuration list for PBXLegacyTarget "compile shader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6D93AA724F121A600D34026 /* Debug */,
+				A6D93AA824F121A600D34026 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

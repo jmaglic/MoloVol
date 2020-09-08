@@ -4,6 +4,7 @@
 #  include <wx/wx.h>
 #endif
 
+#include "wxVolumeRenderer.h"
 #include "base.h"
 #include "controller.h"
 

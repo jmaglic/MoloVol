@@ -1,3 +1,4 @@
+
 CC := g++
 SRCDIR := src
 BUILDDIR := build
@@ -14,7 +15,7 @@ INC := -I include
 $(TARGET): $(OBJECTS)
 	@echo " Linking..."
 	mkdir -p $(BINDIR)
-	$(CC) $(CXXFLAGS) $^ `wx-config --cxxflags --libs` -o $(TARGET)
+	$(CC) $(CXXFLAGS) $^ `wx-config --cxxflags --libs` -framework OpenCL -o $(TARGET)
 
 $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
 	@mkdir -p $(BUILDDIR)

@@ -11,9 +11,9 @@ struct AtomNode;
 class Voxel{
   public:
     Voxel();
-    Voxel& access(const short& x, const short& y, const short& z);
-    Voxel& access(const short& i);
-    char getType();
+	Voxel& get(const short x, const short y, const short z);
+	Voxel& get(const short i);
+    char getType() const;
 
    /* replaced by other determineType function
     void determineType

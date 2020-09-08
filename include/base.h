@@ -12,6 +12,7 @@
 #include <vector>
 #include <tuple>
 #include <unordered_map>
+#include "wxVolumeRenderer.h"
 #include <map>
 
 class MainApp: public wxApp
@@ -64,6 +65,8 @@ class MainFrame: public wxFrame
       wxPanel* atomListPanel;
         wxGrid* atomListGrid;
 
+	wxFrame *frame;
+	wxVolumeRenderer * drawPane;
     wxPanel* rightMainPanel;
       wxPanel* parameterPanel;
         wxPanel* gridsizePanel;
@@ -120,6 +123,10 @@ class MainFrame: public wxFrame
     wxColour col_cyan_cell = wxColour(120,255,255);
 
     DECLARE_EVENT_TABLE()
+
+    // other methods
+	void showRendering();
+
 };
 
 enum

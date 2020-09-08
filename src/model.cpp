@@ -55,8 +55,6 @@ void Model::calcVolume(){
   std::string message_to_user
     = "Van der Waals Volume: " + std::to_string(volume) + " " + Symbol::angstrom() + Symbol::cubed();
   Ctrl::getInstance()->notifyUser(message_to_user);
-
-  return;
 }
 
 std::vector<std::tuple<std::string, int, double>> Model::generateAtomList(){
@@ -69,7 +67,6 @@ std::vector<std::tuple<std::string, int, double>> Model::generateAtomList(){
 
 void Model::setRadiusMap(std::unordered_map<std::string, double> map){
   radius_map = map;
-  return;
 }
 
 void Model::debug(){
@@ -79,7 +76,14 @@ void Model::debug(){
   for(int dim = 0; dim < 3; dim++){
     std::cout << "Cell Limit in Dim " << dim << ":" << cell_min[dim] << " and " << cell_max[dim] << std::endl;
   }
-  return;
+}
+
+std::vector<uint8_t> Model:: getMatrix(){
+	return this->cell.getMatrix();
+}
+
+std::array<unsigned int,3> Model::getResolution(){
+	return this->cell.getResolution();
 }
 
 ///////////////////

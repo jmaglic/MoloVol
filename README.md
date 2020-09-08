@@ -62,11 +62,6 @@ If you ever wish to remove the installation, run the following command from your
 `$ make uninstall`
 
 #### Cloning the repository
-
-You will need to install Git if you havent already. Visit https://git-scm.com. Once you have Git installed on your computer you can clone the respository to download all files to your local machine.
-
-`$ git clone https://github.com/jmaglic/ballpit`
-
 If you have all dependencies installed, you should be able to easily compile the program by running:
 
 `$ make`

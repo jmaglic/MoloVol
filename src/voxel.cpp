@@ -25,17 +25,19 @@ Voxel::Voxel(){
 // ACCESS //
 ////////////
 
-Voxel& Voxel::access(const short& x, const short& y, const short& z){
-  assert(x*y*z < 8);
+Voxel& Voxel::get(const short x, const short y, const short z){
+  assert(x<2);
+  assert(y<2);
+  assert(z<2);
   return data[4 * z + 2 * y + x];
 }
 
-Voxel& Voxel::access(const short& i){
+Voxel& Voxel::get(const short i) {
   assert(i <= 8);
   return data[i];
 }
 
-char Voxel::getType(){
+char Voxel::getType() const{
   return type;
 }
 
