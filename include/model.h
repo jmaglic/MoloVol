@@ -76,6 +76,7 @@ class Model{
     bool readAtomFile(const std::string&, bool);
     void readFileXYZ(const std::string&);
     void readFilePDB(const std::string&, bool);
+    void readFileCIF(const std::string&);
 
     // export
     void createReport();
@@ -92,15 +93,7 @@ class Model{
     std::vector<std::string> listElementsInStructure();
 
     // crystal unit cell related functions
-    bool getSymmetryElements(std::string, std::vector<int>&, std::vector<double>&);
     bool processUnitCell();
-    void orthogonalizeUnitCell();
-    bool symmetrizeUnitCell();
-    void moveAtomsInsideCell();
-    void removeDuplicateAtoms();
-    void countAtomsInUnitCell();
-    void generateSupercell(double);
-    void generateUsefulAtomMapFromSupercell(double);
 
     double findRadiusOfAtom(const std::string&);
     double findRadiusOfAtom(const Atom&);
@@ -143,6 +136,8 @@ class Model{
     double _cell_param[6]; // unit cell parameters in order: A, B, C, alpha, beta, gamma
     double _cart_matrix[3][3]; // cartesian coordinates of vectors A, B, C
     std::string _space_group;
+    std::vector<int> _sym_matrix_XYZ;
+    std::vector<double> _sym_matrix_fraction;
     std::unordered_map<std::string, double> _radius_map;
     std::unordered_map<std::string, double> _elem_weight;
     std::unordered_map<std::string, int> _elem_Z;
@@ -153,6 +148,20 @@ class Model{
     double _max_atom_radius = 0;
 
     void prepareVolumeCalc();
+
+    // cif file processing
+    bool convertCifSymmetryElements(const std::vector<std::string>&);
+    bool convertCifAtomsList(const std::vector<std::string>&, const std::vector<std::string>&);
+
+    // crystal unit cell related functions
+    bool getSymmetryElements(std::string, std::vector<int>&, std::vector<double>&);
+    void orthogonalizeUnitCell();
+    bool symmetrizeUnitCell();
+    void moveAtomsInsideCell();
+    void removeDuplicateAtoms();
+    void countAtomsInUnitCell();
+    void generateSupercell(double);
+    void generateUsefulAtomMapFromSupercell(double);
 };
 
 

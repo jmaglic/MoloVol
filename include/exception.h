@@ -26,4 +26,11 @@ struct ExceptInvalidInputFile : public std::exception
     }
 };
 
+struct ExceptInvalidCellParams : public std::exception
+{
+	const char * what () const throw () {
+    	return "Ex: Invalid cell parameters in file. Import failed";
+    }
+};
+
 #endif

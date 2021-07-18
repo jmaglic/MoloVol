@@ -1,6 +1,6 @@
 List of space groups and symmetry elements for the program MoloVol.
 https://github.com/jmaglic/MoloVol
-Version: 2021-05-27
+File version: 2021-07-09
 
 ###############################################################################
 MIT License
@@ -35,7 +35,13 @@ These values should not be confused with cartesian coordinates.
 
 The space group names H-M provided in this file correspond to the short Hermann–Mauguin notation.
 The H-M notations provided in this file use only upper case letters and comprise no blank space.
-The H-M notations provided in this file are compatible with cif and pdb files.
+The H-M notations provided in this file are compatible with cif and pdb files with some exceptions:
+For space groups 146,148,155,160,161,166,167:
+	the H-M notations follow the PDB format replacing 'R' with 'H' in the hexagonal setting
+	and is thus not compatible with cif files.
+For space groups 48,50,59,68,70,85,86,88,125,126,129,130,133,134,137,138,141,142,201,203,222,224,227,228:
+	the H-M notations for the alternative origin 2 setting ends with ':2' to mark the difference.
+For the above groups, both settings are provided (hexagonal/rhombohedral and origin 1/origin 2).
 ###############################################################################
 
 Space group #1
@@ -900,6 +906,29 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 -1 0 0 0 1 0 0 0 1 0.5 0.5 0.5 
 Space group end
 
+Space group #48 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'PNNN:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+1/2,-y+1/2,z
+  -x+1/2,y,-z+1/2
+  x,-y+1/2,-z+1/2
+  -x,-y,-z
+  x+1/2,y+1/2,-z
+  x+1/2,-y,z+1/2
+  -x,y+1/2,z+1/2
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.5 0.5 0 
+-1 0 0 0 1 0 0 0 -1 0.5 0 0.5 
+1 0 0 0 -1 0 0 0 -1 0 0.5 0.5 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.5 0.5 0 
+1 0 0 0 -1 0 0 0 1 0.5 0 0.5 
+-1 0 0 0 1 0 0 0 1 0 0.5 0.5 
+Space group end
+
 Space group #49
 _symmetry_space_group_name_H-M    'PCCM'
 _symmetry_equiv_pos_as_xyz
@@ -942,6 +971,29 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 1 0 0 0 1 0 0 0 -1 0.5 0.5 0 
 1 0 0 0 -1 0 0 0 1 0.5 0.5 0 
 -1 0 0 0 1 0 0 0 1 0.5 0.5 0 
+Space group end
+
+Space group #50 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'PBAN:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+1/2,-y+1/2,z
+  -x+1/2,y,-z
+  x,-y+1/2,-z
+  -x,-y,-z
+  x+1/2,y+1/2,-z
+  x+1/2,-y,z
+  -x,y+1/2,z
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.5 0.5 0 
+-1 0 0 0 1 0 0 0 -1 0.5 0 0 
+1 0 0 0 -1 0 0 0 -1 0 0.5 0 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.5 0.5 0 
+1 0 0 0 -1 0 0 0 1 0.5 0 0 
+-1 0 0 0 1 0 0 0 1 0 0.5 0 
 Space group end
 
 Space group #51
@@ -1140,6 +1192,29 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 1 0 0 0 1 0 0 0 -1 0.5 0.5 0 
 1 0 0 0 -1 0 0 0 1 0 0 0 
 -1 0 0 0 1 0 0 0 1 0 0 0 
+Space group end
+
+Space group #59 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'PMMN:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+1/2,-y+1/2,z
+  -x,y+1/2,-z
+  x+1/2,-y,-z
+  -x,-y,-z
+  x+1/2,y+1/2,-z
+  x,-y+1/2,z
+  -x+1/2,y,z
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.5 0.5 0 
+-1 0 0 0 1 0 0 0 -1 0 0.5 0 
+1 0 0 0 -1 0 0 0 -1 0.5 0 0 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.5 0.5 0 
+1 0 0 0 -1 0 0 0 1 0 0.5 0 
+-1 0 0 0 1 0 0 0 1 0.5 0 0 
 Space group end
 
 Space group #60
@@ -1436,6 +1511,45 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 -1 0 0 0 1 0 0 0 1 0 0.5 0.5 
 Space group end
 
+Space group #68 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'CCCA:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+1/2,-y,z
+  -x,y,-z+1/2
+  x+1/2,-y,-z+1/2
+  -x,-y,-z
+  x+1/2,y,-z
+  x,-y,z+1/2
+  -x+1/2,y,z+1/2
+  x+1/2,y+1/2,z
+  -x,-y+1/2,z
+  -x+1/2,y+1/2,-z+1/2
+  x,-y+1/2,-z+1/2
+  -x+1/2,-y+1/2,-z
+  x,y+1/2,-z
+  x+1/2,-y+1/2,z+1/2
+  -x,y+1/2,z+1/2
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.5 0 0 
+-1 0 0 0 1 0 0 0 -1 0 0 0.5 
+1 0 0 0 -1 0 0 0 -1 0.5 0 0.5 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.5 0 0 
+1 0 0 0 -1 0 0 0 1 0 0 0.5 
+-1 0 0 0 1 0 0 0 1 0.5 0 0.5 
+1 0 0 0 1 0 0 0 1 0.5 0.5 0 
+-1 0 0 0 -1 0 0 0 1 0 0.5 0 
+-1 0 0 0 1 0 0 0 -1 0.5 0.5 0.5 
+1 0 0 0 -1 0 0 0 -1 0 0.5 0.5 
+-1 0 0 0 -1 0 0 0 -1 0.5 0.5 0 
+1 0 0 0 1 0 0 0 -1 0 0.5 0 
+1 0 0 0 -1 0 0 0 1 0.5 0.5 0.5 
+-1 0 0 0 1 0 0 0 1 0 0.5 0.5 
+Space group end
+
 Space group #69
 _symmetry_space_group_name_H-M    'FMMM'
 _symmetry_equiv_pos_as_xyz
@@ -1574,6 +1688,77 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 1 0 0 0 1 0 0 0 -1 0.75 0.75 0.25 
 1 0 0 0 -1 0 0 0 1 0.75 0.75 0.25 
 -1 0 0 0 1 0 0 0 1 0.75 0.75 0.25 
+Space group end
+
+Space group #70 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'FDDD:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+3/4,-y+3/4,z
+  -x+3/4,y,-z+3/4
+  x,-y+3/4,-z+3/4
+  -x,-y,-z
+  x+1/4,y+1/4,-z
+  x+1/4,-y,z+1/4
+  -x,y+1/4,z+1/4
+  x,y+1/2,z+1/2
+  -x+3/4,-y+1/4,z+1/2
+  -x+3/4,y+1/2,-z+1/4
+  x,-y+1/4,-z+1/4
+  -x,-y+1/2,-z+1/2
+  x+1/4,y+3/4,-z+1/2
+  x+1/4,-y+1/2,z+3/4
+  -x,y+3/4,z+3/4
+  x+1/2,y,z+1/2
+  -x+1/4,-y+3/4,z+1/2
+  -x+1/4,y,-z+1/4
+  x+1/2,-y+3/4,-z+1/4
+  -x+1/2,-y,-z+1/2
+  x+3/4,y+1/4,-z+1/2
+  x+3/4,-y,z+3/4
+  -x+1/2,y+1/4,z+3/4
+  x+1/2,y+1/2,z
+  -x+1/4,-y+1/4,z
+  -x+1/4,y+1/2,-z+3/4
+  x+1/2,-y+1/4,-z+3/4
+  -x+1/2,-y+1/2,-z
+  x+3/4,y+3/4,-z
+  x+3/4,-y+1/2,z+1/4
+  -x+1/2,y+3/4,z+1/4
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.75 0.75 0 
+-1 0 0 0 1 0 0 0 -1 0.75 0 0.75 
+1 0 0 0 -1 0 0 0 -1 0 0.75 0.75 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.25 0.25 0 
+1 0 0 0 -1 0 0 0 1 0.25 0 0.25 
+-1 0 0 0 1 0 0 0 1 0 0.25 0.25 
+1 0 0 0 1 0 0 0 1 0 0.5 0.5 
+-1 0 0 0 -1 0 0 0 1 0.75 0.25 0.5 
+-1 0 0 0 1 0 0 0 -1 0.75 0.5 0.25 
+1 0 0 0 -1 0 0 0 -1 0 0.25 0.25 
+-1 0 0 0 -1 0 0 0 -1 0 0.5 0.5 
+1 0 0 0 1 0 0 0 -1 0.25 0.75 0.5 
+1 0 0 0 -1 0 0 0 1 0.25 0.5 0.75 
+-1 0 0 0 1 0 0 0 1 0 0.75 0.75 
+1 0 0 0 1 0 0 0 1 0.5 0 0.5 
+-1 0 0 0 -1 0 0 0 1 0.25 0.75 0.5 
+-1 0 0 0 1 0 0 0 -1 0.25 0 0.25 
+1 0 0 0 -1 0 0 0 -1 0.5 0.75 0.25 
+-1 0 0 0 -1 0 0 0 -1 0.5 0 0.5 
+1 0 0 0 1 0 0 0 -1 0.75 0.25 0.5 
+1 0 0 0 -1 0 0 0 1 0.75 0 0.75 
+-1 0 0 0 1 0 0 0 1 0.5 0.25 0.75 
+1 0 0 0 1 0 0 0 1 0.5 0.5 0 
+-1 0 0 0 -1 0 0 0 1 0.25 0.25 0 
+-1 0 0 0 1 0 0 0 -1 0.25 0.5 0.75 
+1 0 0 0 -1 0 0 0 -1 0.5 0.25 0.75 
+-1 0 0 0 -1 0 0 0 -1 0.5 0.5 0 
+1 0 0 0 1 0 0 0 -1 0.75 0.75 0 
+1 0 0 0 -1 0 0 0 1 0.75 0.5 0.25 
+-1 0 0 0 1 0 0 0 1 0.5 0.75 0.25 
 Space group end
 
 Space group #71
@@ -1930,6 +2115,29 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 0 -1 0 1 0 0 0 0 -1 0 0 0 
 Space group end
 
+Space group #85 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'P4/N:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+1/2,-y+1/2,z
+  -y+1/2,x,z
+  y,-x+1/2,z
+  -x,-y,-z
+  x+1/2,y+1/2,-z
+  y+1/2,-x,-z
+  -y,x+1/2,-z
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.5 0.5 0 
+0 -1 0 1 0 0 0 0 1 0.5 0 0 
+0 1 0 -1 0 0 0 0 1 0 0.5 0 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.5 0.5 0 
+0 1 0 -1 0 0 0 0 -1 0.5 0 0 
+0 -1 0 1 0 0 0 0 -1 0 0.5 0 
+Space group end
+
 Space group #86
 _symmetry_space_group_name_H-M    'P42/N'
 _symmetry_equiv_pos_as_xyz
@@ -1950,6 +2158,29 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 1 0 0 0 1 0 0 0 -1 0.5 0.5 0.5 
 0 1 0 -1 0 0 0 0 -1 0 0 0 
 0 -1 0 1 0 0 0 0 -1 0 0 0 
+Space group end
+
+Space group #86 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'P42/N:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+1/2,-y+1/2,z
+  -y,x+1/2,z+1/2
+  y+1/2,-x,z+1/2
+  -x,-y,-z
+  x+1/2,y+1/2,-z
+  y,-x+1/2,-z+1/2
+  -y+1/2,x,-z+1/2
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.5 0.5 0 
+0 -1 0 1 0 0 0 0 1 0 0.5 0.5 
+0 1 0 -1 0 0 0 0 1 0.5 0 0.5 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.5 0.5 0 
+0 1 0 -1 0 0 0 0 -1 0 0.5 0.5 
+0 -1 0 1 0 0 0 0 -1 0.5 0 0.5 
 Space group end
 
 Space group #87
@@ -2026,6 +2257,45 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 1 0 0 0 1 0 0 0 -1 0 0.5 0.25 
 0 1 0 -1 0 0 0 0 -1 0.5 0.5 0.5 
 0 -1 0 1 0 0 0 0 -1 0 0 0 
+Space group end
+
+Space group #88 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'I41/A:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+1/2,-y,z+1/2
+  -y+3/4,x+1/4,z+1/4
+  y+3/4,-x+3/4,z+3/4
+  -x,-y,-z
+  x+1/2,y,-z+1/2
+  y+1/4,-x+3/4,-z+3/4
+  -y+1/4,x+1/4,-z+1/4
+  x+1/2,y+1/2,z+1/2
+  -x,-y+1/2,z
+  -y+1/4,x+3/4,z+3/4
+  y+1/4,-x+1/4,z+1/4
+  -x+1/2,-y+1/2,-z+1/2
+  x,y+1/2,-z
+  y+3/4,-x+1/4,-z+1/4
+  -y+3/4,x+3/4,-z+3/4
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.5 0 0.5 
+0 -1 0 1 0 0 0 0 1 0.75 0.25 0.25 
+0 1 0 -1 0 0 0 0 1 0.75 0.75 0.75 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.5 0 0.5 
+0 1 0 -1 0 0 0 0 -1 0.25 0.75 0.75 
+0 -1 0 1 0 0 0 0 -1 0.25 0.25 0.25 
+1 0 0 0 1 0 0 0 1 0.5 0.5 0.5 
+-1 0 0 0 -1 0 0 0 1 0 0.5 0 
+0 -1 0 1 0 0 0 0 1 0.25 0.75 0.75 
+0 1 0 -1 0 0 0 0 1 0.25 0.25 0.25 
+-1 0 0 0 -1 0 0 0 -1 0.5 0.5 0.5 
+1 0 0 0 1 0 0 0 -1 0 0.5 0 
+0 1 0 -1 0 0 0 0 -1 0.75 0.25 0.25 
+0 -1 0 1 0 0 0 0 -1 0.75 0.75 0.75 
 Space group end
 
 Space group #89
@@ -3050,6 +3320,45 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 0 1 0 1 0 0 0 0 1 0.5 0.5 0 
 Space group end
 
+Space group #125 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'P4/NBM:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+1/2,-y+1/2,z
+  -y+1/2,x,z
+  y,-x+1/2,z
+  -x+1/2,y,-z
+  x,-y+1/2,-z
+  y,x,-z
+  -y+1/2,-x+1/2,-z
+  -x,-y,-z
+  x+1/2,y+1/2,-z
+  y+1/2,-x,-z
+  -y,x+1/2,-z
+  x+1/2,-y,z
+  -x,y+1/2,z
+  -y,-x,z
+  y+1/2,x+1/2,z
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.5 0.5 0 
+0 -1 0 1 0 0 0 0 1 0.5 0 0 
+0 1 0 -1 0 0 0 0 1 0 0.5 0 
+-1 0 0 0 1 0 0 0 -1 0.5 0 0 
+1 0 0 0 -1 0 0 0 -1 0 0.5 0 
+0 1 0 1 0 0 0 0 -1 0 0 0 
+0 -1 0 -1 0 0 0 0 -1 0.5 0.5 0 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.5 0.5 0 
+0 1 0 -1 0 0 0 0 -1 0.5 0 0 
+0 -1 0 1 0 0 0 0 -1 0 0.5 0 
+1 0 0 0 -1 0 0 0 1 0.5 0 0 
+-1 0 0 0 1 0 0 0 1 0 0.5 0 
+0 -1 0 -1 0 0 0 0 1 0 0 0 
+0 1 0 1 0 0 0 0 1 0.5 0.5 0 
+Space group end
+
 Space group #126
 _symmetry_space_group_name_H-M    'P4/NNC'
 _symmetry_equiv_pos_as_xyz
@@ -3085,6 +3394,45 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 1 0 0 0 -1 0 0 0 1 0.5 0.5 0.5 
 -1 0 0 0 1 0 0 0 1 0.5 0.5 0.5 
 0 -1 0 -1 0 0 0 0 1 0.5 0.5 0.5 
+0 1 0 1 0 0 0 0 1 0.5 0.5 0.5 
+Space group end
+
+Space group #126 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'P4/NNC:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+1/2,-y+1/2,z
+  -y+1/2,x,z
+  y,-x+1/2,z
+  -x+1/2,y,-z+1/2
+  x,-y+1/2,-z+1/2
+  y,x,-z+1/2
+  -y+1/2,-x+1/2,-z+1/2
+  -x,-y,-z
+  x+1/2,y+1/2,-z
+  y+1/2,-x,-z
+  -y,x+1/2,-z
+  x+1/2,-y,z+1/2
+  -x,y+1/2,z+1/2
+  -y,-x,z+1/2
+  y+1/2,x+1/2,z+1/2
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.5 0.5 0 
+0 -1 0 1 0 0 0 0 1 0.5 0 0 
+0 1 0 -1 0 0 0 0 1 0 0.5 0 
+-1 0 0 0 1 0 0 0 -1 0.5 0 0.5 
+1 0 0 0 -1 0 0 0 -1 0 0.5 0.5 
+0 1 0 1 0 0 0 0 -1 0 0 0.5 
+0 -1 0 -1 0 0 0 0 -1 0.5 0.5 0.5 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.5 0.5 0 
+0 1 0 -1 0 0 0 0 -1 0.5 0 0 
+0 -1 0 1 0 0 0 0 -1 0 0.5 0 
+1 0 0 0 -1 0 0 0 1 0.5 0 0.5 
+-1 0 0 0 1 0 0 0 1 0 0.5 0.5 
+0 -1 0 -1 0 0 0 0 1 0 0 0.5 
 0 1 0 1 0 0 0 0 1 0.5 0.5 0.5 
 Space group end
 
@@ -3202,6 +3550,45 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 0 1 0 1 0 0 0 0 1 0.5 0.5 0 
 Space group end
 
+Space group #129 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'P4/NMM:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+1/2,-y+1/2,z
+  -y+1/2,x,z
+  y,-x+1/2,z
+  -x,y+1/2,-z
+  x+1/2,-y,-z
+  y+1/2,x+1/2,-z
+  -y,-x,-z
+  -x,-y,-z
+  x+1/2,y+1/2,-z
+  y+1/2,-x,-z
+  -y,x+1/2,-z
+  x,-y+1/2,z
+  -x+1/2,y,z
+  -y+1/2,-x+1/2,z
+  y,x,z
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.5 0.5 0 
+0 -1 0 1 0 0 0 0 1 0.5 0 0 
+0 1 0 -1 0 0 0 0 1 0 0.5 0 
+-1 0 0 0 1 0 0 0 -1 0 0.5 0 
+1 0 0 0 -1 0 0 0 -1 0.5 0 0 
+0 1 0 1 0 0 0 0 -1 0.5 0.5 0 
+0 -1 0 -1 0 0 0 0 -1 0 0 0 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.5 0.5 0 
+0 1 0 -1 0 0 0 0 -1 0.5 0 0 
+0 -1 0 1 0 0 0 0 -1 0 0.5 0 
+1 0 0 0 -1 0 0 0 1 0 0.5 0 
+-1 0 0 0 1 0 0 0 1 0.5 0 0 
+0 -1 0 -1 0 0 0 0 1 0.5 0.5 0 
+0 1 0 1 0 0 0 0 1 0 0 0 
+Space group end
+
 Space group #130
 _symmetry_space_group_name_H-M    'P4/NCC'
 _symmetry_equiv_pos_as_xyz
@@ -3238,6 +3625,45 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 -1 0 0 0 1 0 0 0 1 0 0 0.5 
 0 -1 0 -1 0 0 0 0 1 0.5 0.5 0.5 
 0 1 0 1 0 0 0 0 1 0.5 0.5 0.5 
+Space group end
+
+Space group #130 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'P4/NCC:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+1/2,-y+1/2,z
+  -y+1/2,x,z
+  y,-x+1/2,z
+  -x,y+1/2,-z+1/2
+  x+1/2,-y,-z+1/2
+  y+1/2,x+1/2,-z+1/2
+  -y,-x,-z+1/2
+  -x,-y,-z
+  x+1/2,y+1/2,-z
+  y+1/2,-x,-z
+  -y,x+1/2,-z
+  x,-y+1/2,z+1/2
+  -x+1/2,y,z+1/2
+  -y+1/2,-x+1/2,z+1/2
+  y,x,z+1/2
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.5 0.5 0 
+0 -1 0 1 0 0 0 0 1 0.5 0 0 
+0 1 0 -1 0 0 0 0 1 0 0.5 0 
+-1 0 0 0 1 0 0 0 -1 0 0.5 0.5 
+1 0 0 0 -1 0 0 0 -1 0.5 0 0.5 
+0 1 0 1 0 0 0 0 -1 0.5 0.5 0.5 
+0 -1 0 -1 0 0 0 0 -1 0 0 0.5 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.5 0.5 0 
+0 1 0 -1 0 0 0 0 -1 0.5 0 0 
+0 -1 0 1 0 0 0 0 -1 0 0.5 0 
+1 0 0 0 -1 0 0 0 1 0 0.5 0.5 
+-1 0 0 0 1 0 0 0 1 0.5 0 0.5 
+0 -1 0 -1 0 0 0 0 1 0.5 0.5 0.5 
+0 1 0 1 0 0 0 0 1 0 0 0.5 
 Space group end
 
 Space group #131
@@ -3354,6 +3780,45 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 0 1 0 1 0 0 0 0 1 0 0 0.5 
 Space group end
 
+Space group #133 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'P42/NBC:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+1/2,-y+1/2,z
+  -y+1/2,x,z+1/2
+  y,-x+1/2,z+1/2
+  -x+1/2,y,-z
+  x,-y+1/2,-z
+  y,x,-z+1/2
+  -y+1/2,-x+1/2,-z+1/2
+  -x,-y,-z
+  x+1/2,y+1/2,-z
+  y+1/2,-x,-z+1/2
+  -y,x+1/2,-z+1/2
+  x+1/2,-y,z
+  -x,y+1/2,z
+  -y,-x,z+1/2
+  y+1/2,x+1/2,z+1/2
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.5 0.5 0 
+0 -1 0 1 0 0 0 0 1 0.5 0 0.5 
+0 1 0 -1 0 0 0 0 1 0 0.5 0.5 
+-1 0 0 0 1 0 0 0 -1 0.5 0 0 
+1 0 0 0 -1 0 0 0 -1 0 0.5 0 
+0 1 0 1 0 0 0 0 -1 0 0 0.5 
+0 -1 0 -1 0 0 0 0 -1 0.5 0.5 0.5 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.5 0.5 0 
+0 1 0 -1 0 0 0 0 -1 0.5 0 0.5 
+0 -1 0 1 0 0 0 0 -1 0 0.5 0.5 
+1 0 0 0 -1 0 0 0 1 0.5 0 0 
+-1 0 0 0 1 0 0 0 1 0 0.5 0 
+0 -1 0 -1 0 0 0 0 1 0 0 0.5 
+0 1 0 1 0 0 0 0 1 0.5 0.5 0.5 
+Space group end
+
 Space group #134
 _symmetry_space_group_name_H-M    'P42/NNM'
 _symmetry_equiv_pos_as_xyz
@@ -3390,6 +3855,45 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 -1 0 0 0 1 0 0 0 1 0.5 0.5 0.5 
 0 -1 0 -1 0 0 0 0 1 0 0 0 
 0 1 0 1 0 0 0 0 1 0 0 0 
+Space group end
+
+Space group #134 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'P42/NNM:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+1/2,-y+1/2,z
+  -y+1/2,x,z+1/2
+  y,-x+1/2,z+1/2
+  -x+1/2,y,-z+1/2
+  x,-y+1/2,-z+1/2
+  y,x,-z
+  -y+1/2,-x+1/2,-z
+  -x,-y,-z
+  x+1/2,y+1/2,-z
+  y+1/2,-x,-z+1/2
+  -y,x+1/2,-z+1/2
+  x+1/2,-y,z+1/2
+  -x,y+1/2,z+1/2
+  -y,-x,z
+  y+1/2,x+1/2,z
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.5 0.5 0 
+0 -1 0 1 0 0 0 0 1 0.5 0 0.5 
+0 1 0 -1 0 0 0 0 1 0 0.5 0.5 
+-1 0 0 0 1 0 0 0 -1 0.5 0 0.5 
+1 0 0 0 -1 0 0 0 -1 0 0.5 0.5 
+0 1 0 1 0 0 0 0 -1 0 0 0 
+0 -1 0 -1 0 0 0 0 -1 0.5 0.5 0 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.5 0.5 0 
+0 1 0 -1 0 0 0 0 -1 0.5 0 0.5 
+0 -1 0 1 0 0 0 0 -1 0 0.5 0.5 
+1 0 0 0 -1 0 0 0 1 0.5 0 0.5 
+-1 0 0 0 1 0 0 0 1 0 0.5 0.5 
+0 -1 0 -1 0 0 0 0 1 0 0 0 
+0 1 0 1 0 0 0 0 1 0.5 0.5 0 
 Space group end
 
 Space group #135
@@ -3506,6 +4010,45 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 0 1 0 1 0 0 0 0 1 0.5 0.5 0.5 
 Space group end
 
+Space group #137 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'P42/NMC:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+1/2,-y+1/2,z
+  -y+1/2,x,z+1/2
+  y,-x+1/2,z+1/2
+  -x,y+1/2,-z
+  x+1/2,-y,-z
+  y+1/2,x+1/2,-z+1/2
+  -y,-x,-z+1/2
+  -x,-y,-z
+  x+1/2,y+1/2,-z
+  y+1/2,-x,-z+1/2
+  -y,x+1/2,-z+1/2
+  x,-y+1/2,z
+  -x+1/2,y,z
+  -y+1/2,-x+1/2,z+1/2
+  y,x,z+1/2
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.5 0.5 0 
+0 -1 0 1 0 0 0 0 1 0.5 0 0.5 
+0 1 0 -1 0 0 0 0 1 0 0.5 0.5 
+-1 0 0 0 1 0 0 0 -1 0 0.5 0 
+1 0 0 0 -1 0 0 0 -1 0.5 0 0 
+0 1 0 1 0 0 0 0 -1 0.5 0.5 0.5 
+0 -1 0 -1 0 0 0 0 -1 0 0 0.5 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.5 0.5 0 
+0 1 0 -1 0 0 0 0 -1 0.5 0 0.5 
+0 -1 0 1 0 0 0 0 -1 0 0.5 0.5 
+1 0 0 0 -1 0 0 0 1 0 0.5 0 
+-1 0 0 0 1 0 0 0 1 0.5 0 0 
+0 -1 0 -1 0 0 0 0 1 0.5 0.5 0.5 
+0 1 0 1 0 0 0 0 1 0 0 0.5 
+Space group end
+
 Space group #138
 _symmetry_space_group_name_H-M    'P42/NCM'
 _symmetry_equiv_pos_as_xyz
@@ -3542,6 +4085,45 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 -1 0 0 0 1 0 0 0 1 0 0 0.5 
 0 -1 0 -1 0 0 0 0 1 0.5 0.5 0 
 0 1 0 1 0 0 0 0 1 0.5 0.5 0 
+Space group end
+
+Space group #138 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'P42/NCM:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+1/2,-y+1/2,z
+  -y+1/2,x,z+1/2
+  y,-x+1/2,z+1/2
+  -x,y+1/2,-z+1/2
+  x+1/2,-y,-z+1/2
+  y+1/2,x+1/2,-z
+  -y,-x,-z
+  -x,-y,-z
+  x+1/2,y+1/2,-z
+  y+1/2,-x,-z+1/2
+  -y,x+1/2,-z+1/2
+  x,-y+1/2,z+1/2
+  -x+1/2,y,z+1/2
+  -y+1/2,-x+1/2,z
+  y,x,z
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.5 0.5 0 
+0 -1 0 1 0 0 0 0 1 0.5 0 0.5 
+0 1 0 -1 0 0 0 0 1 0 0.5 0.5 
+-1 0 0 0 1 0 0 0 -1 0 0.5 0.5 
+1 0 0 0 -1 0 0 0 -1 0.5 0 0.5 
+0 1 0 1 0 0 0 0 -1 0.5 0.5 0 
+0 -1 0 -1 0 0 0 0 -1 0 0 0 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.5 0.5 0 
+0 1 0 -1 0 0 0 0 -1 0.5 0 0.5 
+0 -1 0 1 0 0 0 0 -1 0 0.5 0.5 
+1 0 0 0 -1 0 0 0 1 0 0.5 0.5 
+-1 0 0 0 1 0 0 0 1 0.5 0 0.5 
+0 -1 0 -1 0 0 0 0 1 0.5 0.5 0 
+0 1 0 1 0 0 0 0 1 0 0 0 
 Space group end
 
 Space group #139
@@ -3754,6 +4336,77 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 0 1 0 1 0 0 0 0 1 0.5 0 0.75 
 Space group end
 
+Space group #141 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'I41/AMD:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+1/2,-y,z+1/2
+  -y+1/4,x+3/4,z+1/4
+  y+1/4,-x+1/4,z+3/4
+  -x+1/2,y,-z+1/2
+  x,-y,-z
+  y+1/4,x+3/4,-z+1/4
+  -y+1/4,-x+1/4,-z+3/4
+  -x,-y,-z
+  x+1/2,y,-z+1/2
+  y+3/4,-x+1/4,-z+3/4
+  -y+3/4,x+3/4,-z+1/4
+  x+1/2,-y,z+1/2
+  -x,y,z
+  -y+3/4,-x+1/4,z+3/4
+  y+3/4,x+3/4,z+1/4
+  x+1/2,y+1/2,z+1/2
+  -x,-y+1/2,z
+  -y+3/4,x+1/4,z+3/4
+  y+3/4,-x+3/4,z+1/4
+  -x,y+1/2,-z
+  x+1/2,-y+1/2,-z+1/2
+  y+3/4,x+1/4,-z+3/4
+  -y+3/4,-x+3/4,-z+1/4
+  -x+1/2,-y+1/2,-z+1/2
+  x,y+1/2,-z
+  y+1/4,-x+3/4,-z+1/4
+  -y+1/4,x+1/4,-z+3/4
+  x,-y+1/2,z
+  -x+1/2,y+1/2,z+1/2
+  -y+1/4,-x+3/4,z+1/4
+  y+1/4,x+1/4,z+3/4
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.5 0 0.5 
+0 -1 0 1 0 0 0 0 1 0.25 0.75 0.25 
+0 1 0 -1 0 0 0 0 1 0.25 0.25 0.75 
+-1 0 0 0 1 0 0 0 -1 0.5 0 0.5 
+1 0 0 0 -1 0 0 0 -1 0 0 0 
+0 1 0 1 0 0 0 0 -1 0.25 0.75 0.25 
+0 -1 0 -1 0 0 0 0 -1 0.25 0.25 0.75 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.5 0 0.5 
+0 1 0 -1 0 0 0 0 -1 0.75 0.25 0.75 
+0 -1 0 1 0 0 0 0 -1 0.75 0.75 0.25 
+1 0 0 0 -1 0 0 0 1 0.5 0 0.5 
+-1 0 0 0 1 0 0 0 1 0 0 0 
+0 -1 0 -1 0 0 0 0 1 0.75 0.25 0.75 
+0 1 0 1 0 0 0 0 1 0.75 0.75 0.25 
+1 0 0 0 1 0 0 0 1 0.5 0.5 0.5 
+-1 0 0 0 -1 0 0 0 1 0 0.5 0 
+0 -1 0 1 0 0 0 0 1 0.75 0.25 0.75 
+0 1 0 -1 0 0 0 0 1 0.75 0.75 0.25 
+-1 0 0 0 1 0 0 0 -1 0 0.5 0 
+1 0 0 0 -1 0 0 0 -1 0.5 0.5 0.5 
+0 1 0 1 0 0 0 0 -1 0.75 0.25 0.75 
+0 -1 0 -1 0 0 0 0 -1 0.75 0.75 0.25 
+-1 0 0 0 -1 0 0 0 -1 0.5 0.5 0.5 
+1 0 0 0 1 0 0 0 -1 0 0.5 0 
+0 1 0 -1 0 0 0 0 -1 0.25 0.75 0.25 
+0 -1 0 1 0 0 0 0 -1 0.25 0.25 0.75 
+1 0 0 0 -1 0 0 0 1 0 0.5 0 
+-1 0 0 0 1 0 0 0 1 0.5 0.5 0.5 
+0 -1 0 -1 0 0 0 0 1 0.25 0.75 0.25 
+0 1 0 1 0 0 0 0 1 0.25 0.25 0.75 
+Space group end
+
 Space group #142
 _symmetry_space_group_name_H-M    'I41/ACD'
 _symmetry_equiv_pos_as_xyz
@@ -3824,6 +4477,77 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 0 1 0 1 0 0 0 0 1 0.5 0 0.25 
 Space group end
 
+Space group #142 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'I41/ACD:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+1/2,-y,z+1/2
+  -y+1/4,x+3/4,z+1/4
+  y+1/4,-x+1/4,z+3/4
+  -x+1/2,y,-z
+  x,-y,-z+1/2
+  y+1/4,x+3/4,-z+3/4
+  -y+1/4,-x+1/4,-z+1/4
+  -x,-y,-z
+  x+1/2,y,-z+1/2
+  y+3/4,-x+1/4,-z+3/4
+  -y+3/4,x+3/4,-z+1/4
+  x+1/2,-y,z
+  -x,y,z+1/2
+  -y+3/4,-x+1/4,z+1/4
+  y+3/4,x+3/4,z+3/4
+  x+1/2,y+1/2,z+1/2
+  -x,-y+1/2,z
+  -y+3/4,x+1/4,z+3/4
+  y+3/4,-x+3/4,z+1/4
+  -x,y+1/2,-z+1/2
+  x+1/2,-y+1/2,-z
+  y+3/4,x+1/4,-z+1/4
+  -y+3/4,-x+3/4,-z+3/4
+  -x+1/2,-y+1/2,-z+1/2
+  x,y+1/2,-z
+  y+1/4,-x+3/4,-z+1/4
+  -y+1/4,x+1/4,-z+3/4
+  x,-y+1/2,z+1/2
+  -x+1/2,y+1/2,z
+  -y+1/4,-x+3/4,z+3/4
+  y+1/4,x+1/4,z+1/4
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.5 0 0.5 
+0 -1 0 1 0 0 0 0 1 0.25 0.75 0.25 
+0 1 0 -1 0 0 0 0 1 0.25 0.25 0.75 
+-1 0 0 0 1 0 0 0 -1 0.5 0 0 
+1 0 0 0 -1 0 0 0 -1 0 0 0.5 
+0 1 0 1 0 0 0 0 -1 0.25 0.75 0.75 
+0 -1 0 -1 0 0 0 0 -1 0.25 0.25 0.25 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.5 0 0.5 
+0 1 0 -1 0 0 0 0 -1 0.75 0.25 0.75 
+0 -1 0 1 0 0 0 0 -1 0.75 0.75 0.25 
+1 0 0 0 -1 0 0 0 1 0.5 0 0 
+-1 0 0 0 1 0 0 0 1 0 0 0.5 
+0 -1 0 -1 0 0 0 0 1 0.75 0.25 0.25 
+0 1 0 1 0 0 0 0 1 0.75 0.75 0.75 
+1 0 0 0 1 0 0 0 1 0.5 0.5 0.5 
+-1 0 0 0 -1 0 0 0 1 0 0.5 0 
+0 -1 0 1 0 0 0 0 1 0.75 0.25 0.75 
+0 1 0 -1 0 0 0 0 1 0.75 0.75 0.25 
+-1 0 0 0 1 0 0 0 -1 0 0.5 0.5 
+1 0 0 0 -1 0 0 0 -1 0.5 0.5 0 
+0 1 0 1 0 0 0 0 -1 0.75 0.25 0.25 
+0 -1 0 -1 0 0 0 0 -1 0.75 0.75 0.75 
+-1 0 0 0 -1 0 0 0 -1 0.5 0.5 0.5 
+1 0 0 0 1 0 0 0 -1 0 0.5 0 
+0 1 0 -1 0 0 0 0 -1 0.25 0.75 0.25 
+0 -1 0 1 0 0 0 0 -1 0.25 0.25 0.75 
+1 0 0 0 -1 0 0 0 1 0 0.5 0.5 
+-1 0 0 0 1 0 0 0 1 0.5 0.5 0 
+0 -1 0 -1 0 0 0 0 1 0.25 0.75 0.75 
+0 1 0 1 0 0 0 0 1 0.25 0.25 0.25 
+Space group end
+
 Space group #143
 _symmetry_space_group_name_H-M    'P3'
 _symmetry_equiv_pos_as_xyz
@@ -3860,8 +4584,9 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 -1 1 0 -1 0 0 0 0 1 0 0 0.333333 
 Space group end
 
-Space group #146
-_symmetry_space_group_name_H-M    'R3'
+Space group #146 (rhombohedral space group in the hexagonal setting)
+_symmetry_space_group_name_H-M    'H3'
+(following PDB format for H-M name, 'R' was replaced with 'H')
 _symmetry_equiv_pos_as_xyz
   x,y,z
   -y,x-y,z
@@ -3884,6 +4609,18 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 -1 1 0 -1 0 0 0 0 1 0.333333 0.666667 0.666667 
 Space group end
 
+Space group #146 (rhombohedral space group in the rhombohedral setting)
+_symmetry_space_group_name_H-M    'R3'
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  z,x,y
+  y,z,x
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+0 0 1 1 0 0 0 1 0 0 0 0 
+0 1 0 0 0 1 1 0 0 0 0 0 
+Space group end
+
 Space group #147
 _symmetry_space_group_name_H-M    'P-3'
 _symmetry_equiv_pos_as_xyz
@@ -3902,8 +4639,9 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 1 -1 0 1 0 0 0 0 -1 0 0 0 
 Space group end
 
-Space group #148
-_symmetry_space_group_name_H-M    'R-3'
+Space group #148 (rhombohedral space group in the hexagonal setting)
+_symmetry_space_group_name_H-M    'H-3'
+(following PDB format for H-M name, 'R' was replaced with 'H')
 _symmetry_equiv_pos_as_xyz
   x,y,z
   -y,x-y,z
@@ -3942,6 +4680,24 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 -1 0 0 0 -1 0 0 0 -1 0.333333 0.666667 0.666667 
 0 1 0 -1 1 0 0 0 -1 0.333333 0.666667 0.666667 
 1 -1 0 1 0 0 0 0 -1 0.333333 0.666667 0.666667 
+Space group end
+
+Space group #148 (rhombohedral space group in the rhombohedral setting)
+_symmetry_space_group_name_H-M    'R-3'
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  z,x,y
+  y,z,x
+  -x,-y,-z
+  -z,-x,-y
+  -y,-z,-x
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+0 0 1 1 0 0 0 1 0 0 0 0 
+0 1 0 0 0 1 1 0 0 0 0 0 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+0 0 -1 -1 0 0 0 -1 0 0 0 0 
+0 -1 0 0 0 -1 -1 0 0 0 0 0 
 Space group end
 
 Space group #149
@@ -4052,8 +4808,9 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 -1 0 0 -1 1 0 0 0 -1 0 0 0.666667 
 Space group end
 
-Space group #155
-_symmetry_space_group_name_H-M    'R32'
+Space group #155 (rhombohedral space group in the hexagonal setting)
+_symmetry_space_group_name_H-M    'H32'
+(following PDB format for H-M name, 'R' was replaced with 'H')
 _symmetry_equiv_pos_as_xyz
   x,y,z
   -y,x-y,z
@@ -4092,6 +4849,24 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 0 1 0 1 0 0 0 0 -1 0.333333 0.666667 0.666667 
 1 -1 0 0 -1 0 0 0 -1 0.333333 0.666667 0.666667 
 -1 0 0 -1 1 0 0 0 -1 0.333333 0.666667 0.666667 
+Space group end
+
+Space group #155 (rhombohedral space group in the rhombohedral setting)
+_symmetry_space_group_name_H-M    'R32'
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  z,x,y
+  y,z,x
+  -y,-x,-z
+  -x,-z,-y
+  -z,-y,-x
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+0 0 1 1 0 0 0 1 0 0 0 0 
+0 1 0 0 0 1 1 0 0 0 0 0 
+0 -1 0 -1 0 0 0 0 -1 0 0 0 
+-1 0 0 0 0 -1 0 -1 0 0 0 0 
+0 0 -1 0 -1 0 -1 0 0 0 0 0 
 Space group end
 
 Space group #156
@@ -4166,8 +4941,9 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 -1 0 0 -1 1 0 0 0 1 0 0 0.5 
 Space group end
 
-Space group #160
-_symmetry_space_group_name_H-M    'R3M'
+Space group #160 (rhombohedral space group in the hexagonal setting)
+_symmetry_space_group_name_H-M    'H3M'
+(following PDB format for H-M name, 'R' was replaced with 'H')
 _symmetry_equiv_pos_as_xyz
   x,y,z
   -y,x-y,z
@@ -4208,8 +4984,27 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 1 0 0 1 -1 0 0 0 1 0.333333 0.666667 0.666667 
 Space group end
 
-Space group #161
-_symmetry_space_group_name_H-M    'R3C'
+Space group #160 (rhombohedral space group in the rhombohedral setting)
+_symmetry_space_group_name_H-M    'R3M'
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  z,x,y
+  y,z,x
+  y,x,z
+  x,z,y
+  z,y,x
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+0 0 1 1 0 0 0 1 0 0 0 0 
+0 1 0 0 0 1 1 0 0 0 0 0 
+0 1 0 1 0 0 0 0 1 0 0 0 
+1 0 0 0 0 1 0 1 0 0 0 0 
+0 0 1 0 1 0 1 0 0 0 0 0 
+Space group end
+
+Space group #161 (rhombohedral space group in the hexagonal setting)
+_symmetry_space_group_name_H-M    'H3C'
+(following PDB format for H-M name, 'R' was replaced with 'H')
 _symmetry_equiv_pos_as_xyz
   x,y,z
   -y,x-y,z
@@ -4248,6 +5043,24 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 0 -1 0 -1 0 0 0 0 1 0.333333 0.666667 0.166667 
 -1 1 0 0 1 0 0 0 1 0.333333 0.666667 0.166667 
 1 0 0 1 -1 0 0 0 1 0.333333 0.666667 0.166667 
+Space group end
+
+Space group #161 (rhombohedral space group in the rhombohedral setting)
+_symmetry_space_group_name_H-M    'R3C'
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  z,x,y
+  y,z,x
+  y+1/2,x+1/2,z+1/2
+  x+1/2,z+1/2,y+1/2
+  z+1/2,y+1/2,x+1/2
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+0 0 1 1 0 0 0 1 0 0 0 0 
+0 1 0 0 0 1 1 0 0 0 0 0 
+0 1 0 1 0 0 0 0 1 0.5 0.5 0.5 
+1 0 0 0 0 1 0 1 0 0.5 0.5 0.5 
+0 0 1 0 1 0 1 0 0 0.5 0.5 0.5 
 Space group end
 
 Space group #162
@@ -4370,8 +5183,9 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 1 0 0 1 -1 0 0 0 1 0 0 0.5 
 Space group end
 
-Space group #166
-_symmetry_space_group_name_H-M    'R-3M'
+Space group #166 (rhombohedral space group in the hexagonal setting)
+_symmetry_space_group_name_H-M    'H-3M'
+(following PDB format for H-M name, 'R' was replaced with 'H')
 _symmetry_equiv_pos_as_xyz
   x,y,z
   -y,x-y,z
@@ -4448,8 +5262,39 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 1 0 0 1 -1 0 0 0 1 0.333333 0.666667 0.666667 
 Space group end
 
-Space group #167
-_symmetry_space_group_name_H-M    'R-3C'
+Space group #166 (rhombohedral space group in the rhombohedral setting)
+_symmetry_space_group_name_H-M    'R-3M'
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  z,x,y
+  y,z,x
+  -y,-x,-z
+  -x,-z,-y
+  -z,-y,-x
+  -x,-y,-z
+  -z,-x,-y
+  -y,-z,-x
+  y,x,z
+  x,z,y
+  z,y,x
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+0 0 1 1 0 0 0 1 0 0 0 0 
+0 1 0 0 0 1 1 0 0 0 0 0 
+0 -1 0 -1 0 0 0 0 -1 0 0 0 
+-1 0 0 0 0 -1 0 -1 0 0 0 0 
+0 0 -1 0 -1 0 -1 0 0 0 0 0 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+0 0 -1 -1 0 0 0 -1 0 0 0 0 
+0 -1 0 0 0 -1 -1 0 0 0 0 0 
+0 1 0 1 0 0 0 0 1 0 0 0 
+1 0 0 0 0 1 0 1 0 0 0 0 
+0 0 1 0 1 0 1 0 0 0 0 0 
+Space group end
+
+Space group #167 (rhombohedral space group in the hexagonal setting)
+_symmetry_space_group_name_H-M    'H-3C'
+(following PDB format for H-M name, 'R' was replaced with 'H')
 _symmetry_equiv_pos_as_xyz
   x,y,z
   -y,x-y,z
@@ -4524,6 +5369,36 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 0 -1 0 -1 0 0 0 0 1 0.333333 0.666667 0.166667 
 -1 1 0 0 1 0 0 0 1 0.333333 0.666667 0.166667 
 1 0 0 1 -1 0 0 0 1 0.333333 0.666667 0.166667 
+Space group end
+
+Space group #167 (rhombohedral space group in the rhombohedral setting)
+_symmetry_space_group_name_H-M    'R-3C'
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  z,x,y
+  y,z,x
+  -y+1/2,-x+1/2,-z+1/2
+  -x+1/2,-z+1/2,-y+1/2
+  -z+1/2,-y+1/2,-x+1/2
+  -x,-y,-z
+  -z,-x,-y
+  -y,-z,-x
+  y+1/2,x+1/2,z+1/2
+  x+1/2,z+1/2,y+1/2
+  z+1/2,y+1/2,x+1/2
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+0 0 1 1 0 0 0 1 0 0 0 0 
+0 1 0 0 0 1 1 0 0 0 0 0 
+0 -1 0 -1 0 0 0 0 -1 0.5 0.5 0.5 
+-1 0 0 0 0 -1 0 -1 0 0.5 0.5 0.5 
+0 0 -1 0 -1 0 -1 0 0 0.5 0.5 0.5 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+0 0 -1 -1 0 0 0 -1 0 0 0 0 
+0 -1 0 0 0 -1 -1 0 0 0 0 0 
+0 1 0 1 0 0 0 0 1 0.5 0.5 0.5 
+1 0 0 0 0 1 0 1 0 0.5 0.5 0.5 
+0 0 1 0 1 0 1 0 0 0.5 0.5 0.5 
 Space group end
 
 Space group #168
@@ -5726,6 +6601,61 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 0 1 0 0 0 1 -1 0 0 0.5 0.5 0.5 
 Space group end
 
+Space group #201 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'PN-3:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+1/2,-y+1/2,z
+  -x+1/2,y,-z+1/2
+  x,-y+1/2,-z+1/2
+  z,x,y
+  z,-x+1/2,-y+1/2
+  -z+1/2,-x+1/2,y
+  -z+1/2,x,-y+1/2
+  y,z,x
+  -y+1/2,z,-x+1/2
+  y,-z+1/2,-x+1/2
+  -y+1/2,-z+1/2,x
+  -x,-y,-z
+  x+1/2,y+1/2,-z
+  x+1/2,-y,z+1/2
+  -x,y+1/2,z+1/2
+  -z,-x,-y
+  -z,x+1/2,y+1/2
+  z+1/2,x+1/2,-y
+  z+1/2,-x,y+1/2
+  -y,-z,-x
+  y+1/2,-z,x+1/2
+  -y,z+1/2,x+1/2
+  y+1/2,z+1/2,-x
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.5 0.5 0 
+-1 0 0 0 1 0 0 0 -1 0.5 0 0.5 
+1 0 0 0 -1 0 0 0 -1 0 0.5 0.5 
+0 0 1 1 0 0 0 1 0 0 0 0 
+0 0 1 -1 0 0 0 -1 0 0 0.5 0.5 
+0 0 -1 -1 0 0 0 1 0 0.5 0.5 0 
+0 0 -1 1 0 0 0 -1 0 0.5 0 0.5 
+0 1 0 0 0 1 1 0 0 0 0 0 
+0 -1 0 0 0 1 -1 0 0 0.5 0 0.5 
+0 1 0 0 0 -1 -1 0 0 0 0.5 0.5 
+0 -1 0 0 0 -1 1 0 0 0.5 0.5 0 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.5 0.5 0 
+1 0 0 0 -1 0 0 0 1 0.5 0 0.5 
+-1 0 0 0 1 0 0 0 1 0 0.5 0.5 
+0 0 -1 -1 0 0 0 -1 0 0 0 0 
+0 0 -1 1 0 0 0 1 0 0 0.5 0.5 
+0 0 1 1 0 0 0 -1 0 0.5 0.5 0 
+0 0 1 -1 0 0 0 1 0 0.5 0 0.5 
+0 -1 0 0 0 -1 -1 0 0 0 0 0 
+0 1 0 0 0 -1 1 0 0 0.5 0 0.5 
+0 -1 0 0 0 1 1 0 0 0 0.5 0.5 
+0 1 0 0 0 1 -1 0 0 0.5 0.5 0 
+Space group end
+
 Space group #202
 _symmetry_space_group_name_H-M    'FM-3'
 _symmetry_equiv_pos_as_xyz
@@ -6120,6 +7050,205 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 0 1 0 0 0 -1 1 0 0 0.75 0.75 0.25 
 0 -1 0 0 0 1 1 0 0 0.75 0.75 0.25 
 0 1 0 0 0 1 -1 0 0 0.75 0.75 0.25 
+Space group end
+
+Space group #203 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'FD-3:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+1/4,-y+1/4,z
+  -x+1/4,y,-z+1/4
+  x,-y+1/4,-z+1/4
+  z,x,y
+  z,-x+1/4,-y+1/4
+  -z+1/4,-x+1/4,y
+  -z+1/4,x,-y+1/4
+  y,z,x
+  -y+1/4,z,-x+1/4
+  y,-z+1/4,-x+1/4
+  -y+1/4,-z+1/4,x
+  -x,-y,-z
+  x+3/4,y+3/4,-z
+  x+3/4,-y,z+3/4
+  -x,y+3/4,z+3/4
+  -z,-x,-y
+  -z,x+3/4,y+3/4
+  z+3/4,x+3/4,-y
+  z+3/4,-x,y+3/4
+  -y,-z,-x
+  y+3/4,-z,x+3/4
+  -y,z+3/4,x+3/4
+  y+3/4,z+3/4,-x
+  x,y+1/2,z+1/2
+  -x+1/4,-y+3/4,z+1/2
+  -x+1/4,y+1/2,-z+3/4
+  x,-y+3/4,-z+3/4
+  z,x+1/2,y+1/2
+  z,-x+3/4,-y+3/4
+  -z+1/4,-x+3/4,y+1/2
+  -z+1/4,x+1/2,-y+3/4
+  y,z+1/2,x+1/2
+  -y+1/4,z+1/2,-x+3/4
+  y,-z+3/4,-x+3/4
+  -y+1/4,-z+3/4,x+1/2
+  -x,-y+1/2,-z+1/2
+  x+3/4,y+1/4,-z+1/2
+  x+3/4,-y+1/2,z+1/4
+  -x,y+1/4,z+1/4
+  -z,-x+1/2,-y+1/2
+  -z,x+1/4,y+1/4
+  z+3/4,x+1/4,-y+1/2
+  z+3/4,-x+1/2,y+1/4
+  -y,-z+1/2,-x+1/2
+  y+3/4,-z+1/2,x+1/4
+  -y,z+1/4,x+1/4
+  y+3/4,z+1/4,-x+1/2
+  x+1/2,y,z+1/2
+  -x+3/4,-y+1/4,z+1/2
+  -x+3/4,y,-z+3/4
+  x+1/2,-y+1/4,-z+3/4
+  z+1/2,x,y+1/2
+  z+1/2,-x+1/4,-y+3/4
+  -z+3/4,-x+1/4,y+1/2
+  -z+3/4,x,-y+3/4
+  y+1/2,z,x+1/2
+  -y+3/4,z,-x+3/4
+  y+1/2,-z+1/4,-x+3/4
+  -y+3/4,-z+1/4,x+1/2
+  -x+1/2,-y,-z+1/2
+  x+1/4,y+3/4,-z+1/2
+  x+1/4,-y,z+1/4
+  -x+1/2,y+3/4,z+1/4
+  -z+1/2,-x,-y+1/2
+  -z+1/2,x+3/4,y+1/4
+  z+1/4,x+3/4,-y+1/2
+  z+1/4,-x,y+1/4
+  -y+1/2,-z,-x+1/2
+  y+1/4,-z,x+1/4
+  -y+1/2,z+3/4,x+1/4
+  y+1/4,z+3/4,-x+1/2
+  x+1/2,y+1/2,z
+  -x+3/4,-y+3/4,z
+  -x+3/4,y+1/2,-z+1/4
+  x+1/2,-y+3/4,-z+1/4
+  z+1/2,x+1/2,y
+  z+1/2,-x+3/4,-y+1/4
+  -z+3/4,-x+3/4,y
+  -z+3/4,x+1/2,-y+1/4
+  y+1/2,z+1/2,x
+  -y+3/4,z+1/2,-x+1/4
+  y+1/2,-z+3/4,-x+1/4
+  -y+3/4,-z+3/4,x
+  -x+1/2,-y+1/2,-z
+  x+1/4,y+1/4,-z
+  x+1/4,-y+1/2,z+3/4
+  -x+1/2,y+1/4,z+3/4
+  -z+1/2,-x+1/2,-y
+  -z+1/2,x+1/4,y+3/4
+  z+1/4,x+1/4,-y
+  z+1/4,-x+1/2,y+3/4
+  -y+1/2,-z+1/2,-x
+  y+1/4,-z+1/2,x+3/4
+  -y+1/2,z+1/4,x+3/4
+  y+1/4,z+1/4,-x
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.25 0.25 0 
+-1 0 0 0 1 0 0 0 -1 0.25 0 0.25 
+1 0 0 0 -1 0 0 0 -1 0 0.25 0.25 
+0 0 1 1 0 0 0 1 0 0 0 0 
+0 0 1 -1 0 0 0 -1 0 0 0.25 0.25 
+0 0 -1 -1 0 0 0 1 0 0.25 0.25 0 
+0 0 -1 1 0 0 0 -1 0 0.25 0 0.25 
+0 1 0 0 0 1 1 0 0 0 0 0 
+0 -1 0 0 0 1 -1 0 0 0.25 0 0.25 
+0 1 0 0 0 -1 -1 0 0 0 0.25 0.25 
+0 -1 0 0 0 -1 1 0 0 0.25 0.25 0 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.75 0.75 0 
+1 0 0 0 -1 0 0 0 1 0.75 0 0.75 
+-1 0 0 0 1 0 0 0 1 0 0.75 0.75 
+0 0 -1 -1 0 0 0 -1 0 0 0 0 
+0 0 -1 1 0 0 0 1 0 0 0.75 0.75 
+0 0 1 1 0 0 0 -1 0 0.75 0.75 0 
+0 0 1 -1 0 0 0 1 0 0.75 0 0.75 
+0 -1 0 0 0 -1 -1 0 0 0 0 0 
+0 1 0 0 0 -1 1 0 0 0.75 0 0.75 
+0 -1 0 0 0 1 1 0 0 0 0.75 0.75 
+0 1 0 0 0 1 -1 0 0 0.75 0.75 0 
+1 0 0 0 1 0 0 0 1 0 0.5 0.5 
+-1 0 0 0 -1 0 0 0 1 0.25 0.75 0.5 
+-1 0 0 0 1 0 0 0 -1 0.25 0.5 0.75 
+1 0 0 0 -1 0 0 0 -1 0 0.75 0.75 
+0 0 1 1 0 0 0 1 0 0 0.5 0.5 
+0 0 1 -1 0 0 0 -1 0 0 0.75 0.75 
+0 0 -1 -1 0 0 0 1 0 0.25 0.75 0.5 
+0 0 -1 1 0 0 0 -1 0 0.25 0.5 0.75 
+0 1 0 0 0 1 1 0 0 0 0.5 0.5 
+0 -1 0 0 0 1 -1 0 0 0.25 0.5 0.75 
+0 1 0 0 0 -1 -1 0 0 0 0.75 0.75 
+0 -1 0 0 0 -1 1 0 0 0.25 0.75 0.5 
+-1 0 0 0 -1 0 0 0 -1 0 0.5 0.5 
+1 0 0 0 1 0 0 0 -1 0.75 0.25 0.5 
+1 0 0 0 -1 0 0 0 1 0.75 0.5 0.25 
+-1 0 0 0 1 0 0 0 1 0 0.25 0.25 
+0 0 -1 -1 0 0 0 -1 0 0 0.5 0.5 
+0 0 -1 1 0 0 0 1 0 0 0.25 0.25 
+0 0 1 1 0 0 0 -1 0 0.75 0.25 0.5 
+0 0 1 -1 0 0 0 1 0 0.75 0.5 0.25 
+0 -1 0 0 0 -1 -1 0 0 0 0.5 0.5 
+0 1 0 0 0 -1 1 0 0 0.75 0.5 0.25 
+0 -1 0 0 0 1 1 0 0 0 0.25 0.25 
+0 1 0 0 0 1 -1 0 0 0.75 0.25 0.5 
+1 0 0 0 1 0 0 0 1 0.5 0 0.5 
+-1 0 0 0 -1 0 0 0 1 0.75 0.25 0.5 
+-1 0 0 0 1 0 0 0 -1 0.75 0 0.75 
+1 0 0 0 -1 0 0 0 -1 0.5 0.25 0.75 
+0 0 1 1 0 0 0 1 0 0.5 0 0.5 
+0 0 1 -1 0 0 0 -1 0 0.5 0.25 0.75 
+0 0 -1 -1 0 0 0 1 0 0.75 0.25 0.5 
+0 0 -1 1 0 0 0 -1 0 0.75 0 0.75 
+0 1 0 0 0 1 1 0 0 0.5 0 0.5 
+0 -1 0 0 0 1 -1 0 0 0.75 0 0.75 
+0 1 0 0 0 -1 -1 0 0 0.5 0.25 0.75 
+0 -1 0 0 0 -1 1 0 0 0.75 0.25 0.5 
+-1 0 0 0 -1 0 0 0 -1 0.5 0 0.5 
+1 0 0 0 1 0 0 0 -1 0.25 0.75 0.5 
+1 0 0 0 -1 0 0 0 1 0.25 0 0.25 
+-1 0 0 0 1 0 0 0 1 0.5 0.75 0.25 
+0 0 -1 -1 0 0 0 -1 0 0.5 0 0.5 
+0 0 -1 1 0 0 0 1 0 0.5 0.75 0.25 
+0 0 1 1 0 0 0 -1 0 0.25 0.75 0.5 
+0 0 1 -1 0 0 0 1 0 0.25 0 0.25 
+0 -1 0 0 0 -1 -1 0 0 0.5 0 0.5 
+0 1 0 0 0 -1 1 0 0 0.25 0 0.25 
+0 -1 0 0 0 1 1 0 0 0.5 0.75 0.25 
+0 1 0 0 0 1 -1 0 0 0.25 0.75 0.5 
+1 0 0 0 1 0 0 0 1 0.5 0.5 0 
+-1 0 0 0 -1 0 0 0 1 0.75 0.75 0 
+-1 0 0 0 1 0 0 0 -1 0.75 0.5 0.25 
+1 0 0 0 -1 0 0 0 -1 0.5 0.75 0.25 
+0 0 1 1 0 0 0 1 0 0.5 0.5 0 
+0 0 1 -1 0 0 0 -1 0 0.5 0.75 0.25 
+0 0 -1 -1 0 0 0 1 0 0.75 0.75 0 
+0 0 -1 1 0 0 0 -1 0 0.75 0.5 0.25 
+0 1 0 0 0 1 1 0 0 0.5 0.5 0 
+0 -1 0 0 0 1 -1 0 0 0.75 0.5 0.25 
+0 1 0 0 0 -1 -1 0 0 0.5 0.75 0.25 
+0 -1 0 0 0 -1 1 0 0 0.75 0.75 0 
+-1 0 0 0 -1 0 0 0 -1 0.5 0.5 0 
+1 0 0 0 1 0 0 0 -1 0.25 0.25 0 
+1 0 0 0 -1 0 0 0 1 0.25 0.5 0.75 
+-1 0 0 0 1 0 0 0 1 0.5 0.25 0.75 
+0 0 -1 -1 0 0 0 -1 0 0.5 0.5 0 
+0 0 -1 1 0 0 0 1 0 0.5 0.25 0.75 
+0 0 1 1 0 0 0 -1 0 0.25 0.25 0 
+0 0 1 -1 0 0 0 1 0 0.25 0.5 0.75 
+0 -1 0 0 0 -1 -1 0 0 0.5 0.5 0 
+0 1 0 0 0 -1 1 0 0 0.25 0.5 0.75 
+0 -1 0 0 0 1 1 0 0 0.5 0.25 0.75 
+0 1 0 0 0 1 -1 0 0 0.25 0.25 0 
 Space group end
 
 Space group #204
@@ -8108,6 +9237,109 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 0 0 1 0 1 0 1 0 0 0.5 0.5 0.5 
 Space group end
 
+Space group #222 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'PN-3N:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+1/2,-y+1/2,z
+  -x+1/2,y,-z+1/2
+  x,-y+1/2,-z+1/2
+  z,x,y
+  z,-x+1/2,-y+1/2
+  -z+1/2,-x+1/2,y
+  -z+1/2,x,-y+1/2
+  y,z,x
+  -y+1/2,z,-x+1/2
+  y,-z+1/2,-x+1/2
+  -y+1/2,-z+1/2,x
+  y,x,-z+1/2
+  -y+1/2,-x+1/2,-z+1/2
+  y,-x+1/2,z
+  -y+1/2,x,z
+  x,z,-y+1/2
+  -x+1/2,z,y
+  -x+1/2,-z+1/2,-y+1/2
+  x,-z+1/2,y
+  z,y,-x+1/2
+  z,-y+1/2,x
+  -z+1/2,y,x
+  -z+1/2,-y+1/2,-x+1/2
+  -x,-y,-z
+  x+1/2,y+1/2,-z
+  x+1/2,-y,z+1/2
+  -x,y+1/2,z+1/2
+  -z,-x,-y
+  -z,x+1/2,y+1/2
+  z+1/2,x+1/2,-y
+  z+1/2,-x,y+1/2
+  -y,-z,-x
+  y+1/2,-z,x+1/2
+  -y,z+1/2,x+1/2
+  y+1/2,z+1/2,-x
+  -y,-x,z+1/2
+  y+1/2,x+1/2,z+1/2
+  -y,x+1/2,-z
+  y+1/2,-x,-z
+  -x,-z,y+1/2
+  x+1/2,-z,-y
+  x+1/2,z+1/2,y+1/2
+  -x,z+1/2,-y
+  -z,-y,x+1/2
+  -z,y+1/2,-x
+  z+1/2,-y,-x
+  z+1/2,y+1/2,x+1/2
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.5 0.5 0 
+-1 0 0 0 1 0 0 0 -1 0.5 0 0.5 
+1 0 0 0 -1 0 0 0 -1 0 0.5 0.5 
+0 0 1 1 0 0 0 1 0 0 0 0 
+0 0 1 -1 0 0 0 -1 0 0 0.5 0.5 
+0 0 -1 -1 0 0 0 1 0 0.5 0.5 0 
+0 0 -1 1 0 0 0 -1 0 0.5 0 0.5 
+0 1 0 0 0 1 1 0 0 0 0 0 
+0 -1 0 0 0 1 -1 0 0 0.5 0 0.5 
+0 1 0 0 0 -1 -1 0 0 0 0.5 0.5 
+0 -1 0 0 0 -1 1 0 0 0.5 0.5 0 
+0 1 0 1 0 0 0 0 -1 0 0 0.5 
+0 -1 0 -1 0 0 0 0 -1 0.5 0.5 0.5 
+0 1 0 -1 0 0 0 0 1 0 0.5 0 
+0 -1 0 1 0 0 0 0 1 0.5 0 0 
+1 0 0 0 0 1 0 -1 0 0 0 0.5 
+-1 0 0 0 0 1 0 1 0 0.5 0 0 
+-1 0 0 0 0 -1 0 -1 0 0.5 0.5 0.5 
+1 0 0 0 0 -1 0 1 0 0 0.5 0 
+0 0 1 0 1 0 -1 0 0 0 0 0.5 
+0 0 1 0 -1 0 1 0 0 0 0.5 0 
+0 0 -1 0 1 0 1 0 0 0.5 0 0 
+0 0 -1 0 -1 0 -1 0 0 0.5 0.5 0.5 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.5 0.5 0 
+1 0 0 0 -1 0 0 0 1 0.5 0 0.5 
+-1 0 0 0 1 0 0 0 1 0 0.5 0.5 
+0 0 -1 -1 0 0 0 -1 0 0 0 0 
+0 0 -1 1 0 0 0 1 0 0 0.5 0.5 
+0 0 1 1 0 0 0 -1 0 0.5 0.5 0 
+0 0 1 -1 0 0 0 1 0 0.5 0 0.5 
+0 -1 0 0 0 -1 -1 0 0 0 0 0 
+0 1 0 0 0 -1 1 0 0 0.5 0 0.5 
+0 -1 0 0 0 1 1 0 0 0 0.5 0.5 
+0 1 0 0 0 1 -1 0 0 0.5 0.5 0 
+0 -1 0 -1 0 0 0 0 1 0 0 0.5 
+0 1 0 1 0 0 0 0 1 0.5 0.5 0.5 
+0 -1 0 1 0 0 0 0 -1 0 0.5 0 
+0 1 0 -1 0 0 0 0 -1 0.5 0 0 
+-1 0 0 0 0 -1 0 1 0 0 0 0.5 
+1 0 0 0 0 -1 0 -1 0 0.5 0 0 
+1 0 0 0 0 1 0 1 0 0.5 0.5 0.5 
+-1 0 0 0 0 1 0 -1 0 0 0.5 0 
+0 0 -1 0 -1 0 1 0 0 0 0 0.5 
+0 0 -1 0 1 0 -1 0 0 0 0.5 0 
+0 0 1 0 -1 0 -1 0 0 0.5 0 0 
+0 0 1 0 1 0 1 0 0 0.5 0.5 0.5 
+Space group end
+
 Space group #223
 _symmetry_space_group_name_H-M    'PM-3N'
 _symmetry_equiv_pos_as_xyz
@@ -8309,6 +9541,109 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 0 0 -1 0 -1 0 1 0 0 0 0 0 
 0 0 -1 0 1 0 -1 0 0 0 0 0 
 0 0 1 0 -1 0 -1 0 0 0 0 0 
+0 0 1 0 1 0 1 0 0 0 0 0 
+Space group end
+
+Space group #224 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'PN-3M:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+1/2,-y+1/2,z
+  -x+1/2,y,-z+1/2
+  x,-y+1/2,-z+1/2
+  z,x,y
+  z,-x+1/2,-y+1/2
+  -z+1/2,-x+1/2,y
+  -z+1/2,x,-y+1/2
+  y,z,x
+  -y+1/2,z,-x+1/2
+  y,-z+1/2,-x+1/2
+  -y+1/2,-z+1/2,x
+  y+1/2,x+1/2,-z
+  -y,-x,-z
+  y+1/2,-x,z+1/2
+  -y,x+1/2,z+1/2
+  x+1/2,z+1/2,-y
+  -x,z+1/2,y+1/2
+  -x,-z,-y
+  x+1/2,-z,y+1/2
+  z+1/2,y+1/2,-x
+  z+1/2,-y,x+1/2
+  -z,y+1/2,x+1/2
+  -z,-y,-x
+  -x,-y,-z
+  x+1/2,y+1/2,-z
+  x+1/2,-y,z+1/2
+  -x,y+1/2,z+1/2
+  -z,-x,-y
+  -z,x+1/2,y+1/2
+  z+1/2,x+1/2,-y
+  z+1/2,-x,y+1/2
+  -y,-z,-x
+  y+1/2,-z,x+1/2
+  -y,z+1/2,x+1/2
+  y+1/2,z+1/2,-x
+  -y+1/2,-x+1/2,z
+  y,x,z
+  -y+1/2,x,-z+1/2
+  y,-x+1/2,-z+1/2
+  -x+1/2,-z+1/2,y
+  x,-z+1/2,-y+1/2
+  x,z,y
+  -x+1/2,z,-y+1/2
+  -z+1/2,-y+1/2,x
+  -z+1/2,y,-x+1/2
+  z,-y+1/2,-x+1/2
+  z,y,x
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.5 0.5 0 
+-1 0 0 0 1 0 0 0 -1 0.5 0 0.5 
+1 0 0 0 -1 0 0 0 -1 0 0.5 0.5 
+0 0 1 1 0 0 0 1 0 0 0 0 
+0 0 1 -1 0 0 0 -1 0 0 0.5 0.5 
+0 0 -1 -1 0 0 0 1 0 0.5 0.5 0 
+0 0 -1 1 0 0 0 -1 0 0.5 0 0.5 
+0 1 0 0 0 1 1 0 0 0 0 0 
+0 -1 0 0 0 1 -1 0 0 0.5 0 0.5 
+0 1 0 0 0 -1 -1 0 0 0 0.5 0.5 
+0 -1 0 0 0 -1 1 0 0 0.5 0.5 0 
+0 1 0 1 0 0 0 0 -1 0.5 0.5 0 
+0 -1 0 -1 0 0 0 0 -1 0 0 0 
+0 1 0 -1 0 0 0 0 1 0.5 0 0.5 
+0 -1 0 1 0 0 0 0 1 0 0.5 0.5 
+1 0 0 0 0 1 0 -1 0 0.5 0.5 0 
+-1 0 0 0 0 1 0 1 0 0 0.5 0.5 
+-1 0 0 0 0 -1 0 -1 0 0 0 0 
+1 0 0 0 0 -1 0 1 0 0.5 0 0.5 
+0 0 1 0 1 0 -1 0 0 0.5 0.5 0 
+0 0 1 0 -1 0 1 0 0 0.5 0 0.5 
+0 0 -1 0 1 0 1 0 0 0 0.5 0.5 
+0 0 -1 0 -1 0 -1 0 0 0 0 0 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.5 0.5 0 
+1 0 0 0 -1 0 0 0 1 0.5 0 0.5 
+-1 0 0 0 1 0 0 0 1 0 0.5 0.5 
+0 0 -1 -1 0 0 0 -1 0 0 0 0 
+0 0 -1 1 0 0 0 1 0 0 0.5 0.5 
+0 0 1 1 0 0 0 -1 0 0.5 0.5 0 
+0 0 1 -1 0 0 0 1 0 0.5 0 0.5 
+0 -1 0 0 0 -1 -1 0 0 0 0 0 
+0 1 0 0 0 -1 1 0 0 0.5 0 0.5 
+0 -1 0 0 0 1 1 0 0 0 0.5 0.5 
+0 1 0 0 0 1 -1 0 0 0.5 0.5 0 
+0 -1 0 -1 0 0 0 0 1 0.5 0.5 0 
+0 1 0 1 0 0 0 0 1 0 0 0 
+0 -1 0 1 0 0 0 0 -1 0.5 0 0.5 
+0 1 0 -1 0 0 0 0 -1 0 0.5 0.5 
+-1 0 0 0 0 -1 0 1 0 0.5 0.5 0 
+1 0 0 0 0 -1 0 -1 0 0 0.5 0.5 
+1 0 0 0 0 1 0 1 0 0 0 0 
+-1 0 0 0 0 1 0 -1 0 0.5 0 0.5 
+0 0 -1 0 -1 0 1 0 0 0.5 0.5 0 
+0 0 -1 0 1 0 -1 0 0 0.5 0 0.5 
+0 0 1 0 -1 0 -1 0 0 0 0.5 0.5 
 0 0 1 0 1 0 1 0 0 0 0 0 
 Space group end
 
@@ -9482,6 +10817,397 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 0 0 1 0 1 0 1 0 0 0.5 0.5 0 
 Space group end
 
+Space group #227 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'FD-3M:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+3/4,-y+1/4,z+1/2
+  -x+1/4,y+1/2,-z+3/4
+  x+1/2,-y+3/4,-z+1/4
+  z,x,y
+  z+1/2,-x+3/4,-y+1/4
+  -z+3/4,-x+1/4,y+1/2
+  -z+1/4,x+1/2,-y+3/4
+  y,z,x
+  -y+1/4,z+1/2,-x+3/4
+  y+1/2,-z+3/4,-x+1/4
+  -y+3/4,-z+1/4,x+1/2
+  y+3/4,x+1/4,-z+1/2
+  -y,-x,-z
+  y+1/4,-x+1/2,z+3/4
+  -y+1/2,x+3/4,z+1/4
+  x+3/4,z+1/4,-y+1/2
+  -x+1/2,z+3/4,y+1/4
+  -x,-z,-y
+  x+1/4,-z+1/2,y+3/4
+  z+3/4,y+1/4,-x+1/2
+  z+1/4,-y+1/2,x+3/4
+  -z+1/2,y+3/4,x+1/4
+  -z,-y,-x
+  -x,-y,-z
+  x+1/4,y+3/4,-z+1/2
+  x+3/4,-y+1/2,z+1/4
+  -x+1/2,y+1/4,z+3/4
+  -z,-x,-y
+  -z+1/2,x+1/4,y+3/4
+  z+1/4,x+3/4,-y+1/2
+  z+3/4,-x+1/2,y+1/4
+  -y,-z,-x
+  y+3/4,-z+1/2,x+1/4
+  -y+1/2,z+1/4,x+3/4
+  y+1/4,z+3/4,-x+1/2
+  -y+1/4,-x+3/4,z+1/2
+  y,x,z
+  -y+3/4,x+1/2,-z+1/4
+  y+1/2,-x+1/4,-z+3/4
+  -x+1/4,-z+3/4,y+1/2
+  x+1/2,-z+1/4,-y+3/4
+  x,z,y
+  -x+3/4,z+1/2,-y+1/4
+  -z+1/4,-y+3/4,x+1/2
+  -z+3/4,y+1/2,-x+1/4
+  z+1/2,-y+1/4,-x+3/4
+  z,y,x
+  x,y+1/2,z+1/2
+  -x+3/4,-y+3/4,z
+  -x+1/4,y,-z+1/4
+  x+1/2,-y+1/4,-z+3/4
+  z,x+1/2,y+1/2
+  z+1/2,-x+1/4,-y+3/4
+  -z+3/4,-x+3/4,y
+  -z+1/4,x,-y+1/4
+  y,z+1/2,x+1/2
+  -y+1/4,z,-x+1/4
+  y+1/2,-z+1/4,-x+3/4
+  -y+3/4,-z+3/4,x
+  y+3/4,x+3/4,-z
+  -y,-x+1/2,-z+1/2
+  y+1/4,-x,z+1/4
+  -y+1/2,x+1/4,z+3/4
+  x+3/4,z+3/4,-y
+  -x+1/2,z+1/4,y+3/4
+  -x,-z+1/2,-y+1/2
+  x+1/4,-z,y+1/4
+  z+3/4,y+3/4,-x
+  z+1/4,-y,x+1/4
+  -z+1/2,y+1/4,x+3/4
+  -z,-y+1/2,-x+1/2
+  -x,-y+1/2,-z+1/2
+  x+1/4,y+1/4,-z
+  x+3/4,-y,z+3/4
+  -x+1/2,y+3/4,z+1/4
+  -z,-x+1/2,-y+1/2
+  -z+1/2,x+3/4,y+1/4
+  z+1/4,x+1/4,-y
+  z+3/4,-x,y+3/4
+  -y,-z+1/2,-x+1/2
+  y+3/4,-z,x+3/4
+  -y+1/2,z+3/4,x+1/4
+  y+1/4,z+1/4,-x
+  -y+1/4,-x+1/4,z
+  y,x+1/2,z+1/2
+  -y+3/4,x,-z+3/4
+  y+1/2,-x+3/4,-z+1/4
+  -x+1/4,-z+1/4,y
+  x+1/2,-z+3/4,-y+1/4
+  x,z+1/2,y+1/2
+  -x+3/4,z,-y+3/4
+  -z+1/4,-y+1/4,x
+  -z+3/4,y,-x+3/4
+  z+1/2,-y+3/4,-x+1/4
+  z,y+1/2,x+1/2
+  x+1/2,y,z+1/2
+  -x+1/4,-y+1/4,z
+  -x+3/4,y+1/2,-z+1/4
+  x,-y+3/4,-z+3/4
+  z+1/2,x,y+1/2
+  z,-x+3/4,-y+3/4
+  -z+1/4,-x+1/4,y
+  -z+3/4,x+1/2,-y+1/4
+  y+1/2,z,x+1/2
+  -y+3/4,z+1/2,-x+1/4
+  y,-z+3/4,-x+3/4
+  -y+1/4,-z+1/4,x
+  y+1/4,x+1/4,-z
+  -y+1/2,-x,-z+1/2
+  y+3/4,-x+1/2,z+1/4
+  -y,x+3/4,z+3/4
+  x+1/4,z+1/4,-y
+  -x,z+3/4,y+3/4
+  -x+1/2,-z,-y+1/2
+  x+3/4,-z+1/2,y+1/4
+  z+1/4,y+1/4,-x
+  z+3/4,-y+1/2,x+1/4
+  -z,y+3/4,x+3/4
+  -z+1/2,-y,-x+1/2
+  -x+1/2,-y,-z+1/2
+  x+3/4,y+3/4,-z
+  x+1/4,-y+1/2,z+3/4
+  -x,y+1/4,z+1/4
+  -z+1/2,-x,-y+1/2
+  -z,x+1/4,y+1/4
+  z+3/4,x+3/4,-y
+  z+1/4,-x+1/2,y+3/4
+  -y+1/2,-z,-x+1/2
+  y+1/4,-z+1/2,x+3/4
+  -y,z+1/4,x+1/4
+  y+3/4,z+3/4,-x
+  -y+3/4,-x+3/4,z
+  y+1/2,x,z+1/2
+  -y+1/4,x+1/2,-z+3/4
+  y,-x+1/4,-z+1/4
+  -x+3/4,-z+3/4,y
+  x,-z+1/4,-y+1/4
+  x+1/2,z,y+1/2
+  -x+1/4,z+1/2,-y+3/4
+  -z+3/4,-y+3/4,x
+  -z+1/4,y+1/2,-x+3/4
+  z,-y+1/4,-x+1/4
+  z+1/2,y,x+1/2
+  x+1/2,y+1/2,z
+  -x+1/4,-y+3/4,z+1/2
+  -x+3/4,y,-z+3/4
+  x,-y+1/4,-z+1/4
+  z+1/2,x+1/2,y
+  z,-x+1/4,-y+1/4
+  -z+1/4,-x+3/4,y+1/2
+  -z+3/4,x,-y+3/4
+  y+1/2,z+1/2,x
+  -y+3/4,z,-x+3/4
+  y,-z+1/4,-x+1/4
+  -y+1/4,-z+3/4,x+1/2
+  y+1/4,x+3/4,-z+1/2
+  -y+1/2,-x+1/2,-z
+  y+3/4,-x,z+3/4
+  -y,x+1/4,z+1/4
+  x+1/4,z+3/4,-y+1/2
+  -x,z+1/4,y+1/4
+  -x+1/2,-z+1/2,-y
+  x+3/4,-z,y+3/4
+  z+1/4,y+3/4,-x+1/2
+  z+3/4,-y,x+3/4
+  -z,y+1/4,x+1/4
+  -z+1/2,-y+1/2,-x
+  -x+1/2,-y+1/2,-z
+  x+3/4,y+1/4,-z+1/2
+  x+1/4,-y,z+1/4
+  -x,y+3/4,z+3/4
+  -z+1/2,-x+1/2,-y
+  -z,x+3/4,y+3/4
+  z+3/4,x+1/4,-y+1/2
+  z+1/4,-x,y+1/4
+  -y+1/2,-z+1/2,-x
+  y+1/4,-z,x+1/4
+  -y,z+3/4,x+3/4
+  y+3/4,z+1/4,-x+1/2
+  -y+3/4,-x+1/4,z+1/2
+  y+1/2,x+1/2,z
+  -y+1/4,x,-z+1/4
+  y,-x+3/4,-z+3/4
+  -x+3/4,-z+1/4,y+1/2
+  x,-z+3/4,-y+3/4
+  x+1/2,z+1/2,y
+  -x+1/4,z,-y+1/4
+  -z+3/4,-y+1/4,x+1/2
+  -z+1/4,y,-x+1/4
+  z,-y+3/4,-x+3/4
+  z+1/2,y+1/2,x
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.75 0.25 0.5 
+-1 0 0 0 1 0 0 0 -1 0.25 0.5 0.75 
+1 0 0 0 -1 0 0 0 -1 0.5 0.75 0.25 
+0 0 1 1 0 0 0 1 0 0 0 0 
+0 0 1 -1 0 0 0 -1 0 0.5 0.75 0.25 
+0 0 -1 -1 0 0 0 1 0 0.75 0.25 0.5 
+0 0 -1 1 0 0 0 -1 0 0.25 0.5 0.75 
+0 1 0 0 0 1 1 0 0 0 0 0 
+0 -1 0 0 0 1 -1 0 0 0.25 0.5 0.75 
+0 1 0 0 0 -1 -1 0 0 0.5 0.75 0.25 
+0 -1 0 0 0 -1 1 0 0 0.75 0.25 0.5 
+0 1 0 1 0 0 0 0 -1 0.75 0.25 0.5 
+0 -1 0 -1 0 0 0 0 -1 0 0 0 
+0 1 0 -1 0 0 0 0 1 0.25 0.5 0.75 
+0 -1 0 1 0 0 0 0 1 0.5 0.75 0.25 
+1 0 0 0 0 1 0 -1 0 0.75 0.25 0.5 
+-1 0 0 0 0 1 0 1 0 0.5 0.75 0.25 
+-1 0 0 0 0 -1 0 -1 0 0 0 0 
+1 0 0 0 0 -1 0 1 0 0.25 0.5 0.75 
+0 0 1 0 1 0 -1 0 0 0.75 0.25 0.5 
+0 0 1 0 -1 0 1 0 0 0.25 0.5 0.75 
+0 0 -1 0 1 0 1 0 0 0.5 0.75 0.25 
+0 0 -1 0 -1 0 -1 0 0 0 0 0 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.25 0.75 0.5 
+1 0 0 0 -1 0 0 0 1 0.75 0.5 0.25 
+-1 0 0 0 1 0 0 0 1 0.5 0.25 0.75 
+0 0 -1 -1 0 0 0 -1 0 0 0 0 
+0 0 -1 1 0 0 0 1 0 0.5 0.25 0.75 
+0 0 1 1 0 0 0 -1 0 0.25 0.75 0.5 
+0 0 1 -1 0 0 0 1 0 0.75 0.5 0.25 
+0 -1 0 0 0 -1 -1 0 0 0 0 0 
+0 1 0 0 0 -1 1 0 0 0.75 0.5 0.25 
+0 -1 0 0 0 1 1 0 0 0.5 0.25 0.75 
+0 1 0 0 0 1 -1 0 0 0.25 0.75 0.5 
+0 -1 0 -1 0 0 0 0 1 0.25 0.75 0.5 
+0 1 0 1 0 0 0 0 1 0 0 0 
+0 -1 0 1 0 0 0 0 -1 0.75 0.5 0.25 
+0 1 0 -1 0 0 0 0 -1 0.5 0.25 0.75 
+-1 0 0 0 0 -1 0 1 0 0.25 0.75 0.5 
+1 0 0 0 0 -1 0 -1 0 0.5 0.25 0.75 
+1 0 0 0 0 1 0 1 0 0 0 0 
+-1 0 0 0 0 1 0 -1 0 0.75 0.5 0.25 
+0 0 -1 0 -1 0 1 0 0 0.25 0.75 0.5 
+0 0 -1 0 1 0 -1 0 0 0.75 0.5 0.25 
+0 0 1 0 -1 0 -1 0 0 0.5 0.25 0.75 
+0 0 1 0 1 0 1 0 0 0 0 0 
+1 0 0 0 1 0 0 0 1 0 0.5 0.5 
+-1 0 0 0 -1 0 0 0 1 0.75 0.75 0 
+-1 0 0 0 1 0 0 0 -1 0.25 0 0.25 
+1 0 0 0 -1 0 0 0 -1 0.5 0.25 0.75 
+0 0 1 1 0 0 0 1 0 0 0.5 0.5 
+0 0 1 -1 0 0 0 -1 0 0.5 0.25 0.75 
+0 0 -1 -1 0 0 0 1 0 0.75 0.75 0 
+0 0 -1 1 0 0 0 -1 0 0.25 0 0.25 
+0 1 0 0 0 1 1 0 0 0 0.5 0.5 
+0 -1 0 0 0 1 -1 0 0 0.25 0 0.25 
+0 1 0 0 0 -1 -1 0 0 0.5 0.25 0.75 
+0 -1 0 0 0 -1 1 0 0 0.75 0.75 0 
+0 1 0 1 0 0 0 0 -1 0.75 0.75 0 
+0 -1 0 -1 0 0 0 0 -1 0 0.5 0.5 
+0 1 0 -1 0 0 0 0 1 0.25 0 0.25 
+0 -1 0 1 0 0 0 0 1 0.5 0.25 0.75 
+1 0 0 0 0 1 0 -1 0 0.75 0.75 0 
+-1 0 0 0 0 1 0 1 0 0.5 0.25 0.75 
+-1 0 0 0 0 -1 0 -1 0 0 0.5 0.5 
+1 0 0 0 0 -1 0 1 0 0.25 0 0.25 
+0 0 1 0 1 0 -1 0 0 0.75 0.75 0 
+0 0 1 0 -1 0 1 0 0 0.25 0 0.25 
+0 0 -1 0 1 0 1 0 0 0.5 0.25 0.75 
+0 0 -1 0 -1 0 -1 0 0 0 0.5 0.5 
+-1 0 0 0 -1 0 0 0 -1 0 0.5 0.5 
+1 0 0 0 1 0 0 0 -1 0.25 0.25 0 
+1 0 0 0 -1 0 0 0 1 0.75 0 0.75 
+-1 0 0 0 1 0 0 0 1 0.5 0.75 0.25 
+0 0 -1 -1 0 0 0 -1 0 0 0.5 0.5 
+0 0 -1 1 0 0 0 1 0 0.5 0.75 0.25 
+0 0 1 1 0 0 0 -1 0 0.25 0.25 0 
+0 0 1 -1 0 0 0 1 0 0.75 0 0.75 
+0 -1 0 0 0 -1 -1 0 0 0 0.5 0.5 
+0 1 0 0 0 -1 1 0 0 0.75 0 0.75 
+0 -1 0 0 0 1 1 0 0 0.5 0.75 0.25 
+0 1 0 0 0 1 -1 0 0 0.25 0.25 0 
+0 -1 0 -1 0 0 0 0 1 0.25 0.25 0 
+0 1 0 1 0 0 0 0 1 0 0.5 0.5 
+0 -1 0 1 0 0 0 0 -1 0.75 0 0.75 
+0 1 0 -1 0 0 0 0 -1 0.5 0.75 0.25 
+-1 0 0 0 0 -1 0 1 0 0.25 0.25 0 
+1 0 0 0 0 -1 0 -1 0 0.5 0.75 0.25 
+1 0 0 0 0 1 0 1 0 0 0.5 0.5 
+-1 0 0 0 0 1 0 -1 0 0.75 0 0.75 
+0 0 -1 0 -1 0 1 0 0 0.25 0.25 0 
+0 0 -1 0 1 0 -1 0 0 0.75 0 0.75 
+0 0 1 0 -1 0 -1 0 0 0.5 0.75 0.25 
+0 0 1 0 1 0 1 0 0 0 0.5 0.5 
+1 0 0 0 1 0 0 0 1 0.5 0 0.5 
+-1 0 0 0 -1 0 0 0 1 0.25 0.25 0 
+-1 0 0 0 1 0 0 0 -1 0.75 0.5 0.25 
+1 0 0 0 -1 0 0 0 -1 0 0.75 0.75 
+0 0 1 1 0 0 0 1 0 0.5 0 0.5 
+0 0 1 -1 0 0 0 -1 0 0 0.75 0.75 
+0 0 -1 -1 0 0 0 1 0 0.25 0.25 0 
+0 0 -1 1 0 0 0 -1 0 0.75 0.5 0.25 
+0 1 0 0 0 1 1 0 0 0.5 0 0.5 
+0 -1 0 0 0 1 -1 0 0 0.75 0.5 0.25 
+0 1 0 0 0 -1 -1 0 0 0 0.75 0.75 
+0 -1 0 0 0 -1 1 0 0 0.25 0.25 0 
+0 1 0 1 0 0 0 0 -1 0.25 0.25 0 
+0 -1 0 -1 0 0 0 0 -1 0.5 0 0.5 
+0 1 0 -1 0 0 0 0 1 0.75 0.5 0.25 
+0 -1 0 1 0 0 0 0 1 0 0.75 0.75 
+1 0 0 0 0 1 0 -1 0 0.25 0.25 0 
+-1 0 0 0 0 1 0 1 0 0 0.75 0.75 
+-1 0 0 0 0 -1 0 -1 0 0.5 0 0.5 
+1 0 0 0 0 -1 0 1 0 0.75 0.5 0.25 
+0 0 1 0 1 0 -1 0 0 0.25 0.25 0 
+0 0 1 0 -1 0 1 0 0 0.75 0.5 0.25 
+0 0 -1 0 1 0 1 0 0 0 0.75 0.75 
+0 0 -1 0 -1 0 -1 0 0 0.5 0 0.5 
+-1 0 0 0 -1 0 0 0 -1 0.5 0 0.5 
+1 0 0 0 1 0 0 0 -1 0.75 0.75 0 
+1 0 0 0 -1 0 0 0 1 0.25 0.5 0.75 
+-1 0 0 0 1 0 0 0 1 0 0.25 0.25 
+0 0 -1 -1 0 0 0 -1 0 0.5 0 0.5 
+0 0 -1 1 0 0 0 1 0 0 0.25 0.25 
+0 0 1 1 0 0 0 -1 0 0.75 0.75 0 
+0 0 1 -1 0 0 0 1 0 0.25 0.5 0.75 
+0 -1 0 0 0 -1 -1 0 0 0.5 0 0.5 
+0 1 0 0 0 -1 1 0 0 0.25 0.5 0.75 
+0 -1 0 0 0 1 1 0 0 0 0.25 0.25 
+0 1 0 0 0 1 -1 0 0 0.75 0.75 0 
+0 -1 0 -1 0 0 0 0 1 0.75 0.75 0 
+0 1 0 1 0 0 0 0 1 0.5 0 0.5 
+0 -1 0 1 0 0 0 0 -1 0.25 0.5 0.75 
+0 1 0 -1 0 0 0 0 -1 0 0.25 0.25 
+-1 0 0 0 0 -1 0 1 0 0.75 0.75 0 
+1 0 0 0 0 -1 0 -1 0 0 0.25 0.25 
+1 0 0 0 0 1 0 1 0 0.5 0 0.5 
+-1 0 0 0 0 1 0 -1 0 0.25 0.5 0.75 
+0 0 -1 0 -1 0 1 0 0 0.75 0.75 0 
+0 0 -1 0 1 0 -1 0 0 0.25 0.5 0.75 
+0 0 1 0 -1 0 -1 0 0 0 0.25 0.25 
+0 0 1 0 1 0 1 0 0 0.5 0 0.5 
+1 0 0 0 1 0 0 0 1 0.5 0.5 0 
+-1 0 0 0 -1 0 0 0 1 0.25 0.75 0.5 
+-1 0 0 0 1 0 0 0 -1 0.75 0 0.75 
+1 0 0 0 -1 0 0 0 -1 0 0.25 0.25 
+0 0 1 1 0 0 0 1 0 0.5 0.5 0 
+0 0 1 -1 0 0 0 -1 0 0 0.25 0.25 
+0 0 -1 -1 0 0 0 1 0 0.25 0.75 0.5 
+0 0 -1 1 0 0 0 -1 0 0.75 0 0.75 
+0 1 0 0 0 1 1 0 0 0.5 0.5 0 
+0 -1 0 0 0 1 -1 0 0 0.75 0 0.75 
+0 1 0 0 0 -1 -1 0 0 0 0.25 0.25 
+0 -1 0 0 0 -1 1 0 0 0.25 0.75 0.5 
+0 1 0 1 0 0 0 0 -1 0.25 0.75 0.5 
+0 -1 0 -1 0 0 0 0 -1 0.5 0.5 0 
+0 1 0 -1 0 0 0 0 1 0.75 0 0.75 
+0 -1 0 1 0 0 0 0 1 0 0.25 0.25 
+1 0 0 0 0 1 0 -1 0 0.25 0.75 0.5 
+-1 0 0 0 0 1 0 1 0 0 0.25 0.25 
+-1 0 0 0 0 -1 0 -1 0 0.5 0.5 0 
+1 0 0 0 0 -1 0 1 0 0.75 0 0.75 
+0 0 1 0 1 0 -1 0 0 0.25 0.75 0.5 
+0 0 1 0 -1 0 1 0 0 0.75 0 0.75 
+0 0 -1 0 1 0 1 0 0 0 0.25 0.25 
+0 0 -1 0 -1 0 -1 0 0 0.5 0.5 0 
+-1 0 0 0 -1 0 0 0 -1 0.5 0.5 0 
+1 0 0 0 1 0 0 0 -1 0.75 0.25 0.5 
+1 0 0 0 -1 0 0 0 1 0.25 0 0.25 
+-1 0 0 0 1 0 0 0 1 0 0.75 0.75 
+0 0 -1 -1 0 0 0 -1 0 0.5 0.5 0 
+0 0 -1 1 0 0 0 1 0 0 0.75 0.75 
+0 0 1 1 0 0 0 -1 0 0.75 0.25 0.5 
+0 0 1 -1 0 0 0 1 0 0.25 0 0.25 
+0 -1 0 0 0 -1 -1 0 0 0.5 0.5 0 
+0 1 0 0 0 -1 1 0 0 0.25 0 0.25 
+0 -1 0 0 0 1 1 0 0 0 0.75 0.75 
+0 1 0 0 0 1 -1 0 0 0.75 0.25 0.5 
+0 -1 0 -1 0 0 0 0 1 0.75 0.25 0.5 
+0 1 0 1 0 0 0 0 1 0.5 0.5 0 
+0 -1 0 1 0 0 0 0 -1 0.25 0 0.25 
+0 1 0 -1 0 0 0 0 -1 0 0.75 0.75 
+-1 0 0 0 0 -1 0 1 0 0.75 0.25 0.5 
+1 0 0 0 0 -1 0 -1 0 0 0.75 0.75 
+1 0 0 0 0 1 0 1 0 0.5 0.5 0 
+-1 0 0 0 0 1 0 -1 0 0.25 0 0.25 
+0 0 -1 0 -1 0 1 0 0 0.75 0.25 0.5 
+0 0 -1 0 1 0 -1 0 0 0.25 0 0.25 
+0 0 1 0 -1 0 -1 0 0 0 0.75 0.75 
+0 0 1 0 1 0 1 0 0 0.5 0.5 0 
+Space group end
+
 Space group #228
 _symmetry_space_group_name_H-M    'FD-3C'
 _symmetry_equiv_pos_as_xyz
@@ -9869,6 +11595,397 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 0 0 -1 0 -1 0 1 0 0 0.5 0 0 
 0 0 -1 0 1 0 -1 0 0 0 0.5 0 
 0 0 1 0 -1 0 -1 0 0 0.5 0.5 0.5 
+0 0 1 0 1 0 1 0 0 0 0 0.5 
+Space group end
+
+Space group #228 (Origin 2 setting)
+_symmetry_space_group_name_H-M    'FD-3C:2'
+(H-M name includes ':2' to show origin 2 setting)
+_symmetry_equiv_pos_as_xyz
+  x,y,z
+  -x+1/4,-y+3/4,z+1/2
+  -x+3/4,y+1/2,-z+1/4
+  x+1/2,-y+1/4,-z+3/4
+  z,x,y
+  z+1/2,-x+1/4,-y+3/4
+  -z+1/4,-x+3/4,y+1/2
+  -z+3/4,x+1/2,-y+1/4
+  y,z,x
+  -y+3/4,z+1/2,-x+1/4
+  y+1/2,-z+1/4,-x+3/4
+  -y+1/4,-z+3/4,x+1/2
+  y+3/4,x+1/4,-z
+  -y+1/2,-x+1/2,-z+1/2
+  y+1/4,-x,z+3/4
+  -y,x+3/4,z+1/4
+  x+3/4,z+1/4,-y
+  -x,z+3/4,y+1/4
+  -x+1/2,-z+1/2,-y+1/2
+  x+1/4,-z,y+3/4
+  z+3/4,y+1/4,-x
+  z+1/4,-y,x+3/4
+  -z,y+3/4,x+1/4
+  -z+1/2,-y+1/2,-x+1/2
+  -x,-y,-z
+  x+3/4,y+1/4,-z+1/2
+  x+1/4,-y+1/2,z+3/4
+  -x+1/2,y+3/4,z+1/4
+  -z,-x,-y
+  -z+1/2,x+3/4,y+1/4
+  z+3/4,x+1/4,-y+1/2
+  z+1/4,-x+1/2,y+3/4
+  -y,-z,-x
+  y+1/4,-z+1/2,x+3/4
+  -y+1/2,z+3/4,x+1/4
+  y+3/4,z+1/4,-x+1/2
+  -y+1/4,-x+3/4,z
+  y+1/2,x+1/2,z+1/2
+  -y+3/4,x,-z+1/4
+  y,-x+1/4,-z+3/4
+  -x+1/4,-z+3/4,y
+  x,-z+1/4,-y+3/4
+  x+1/2,z+1/2,y+1/2
+  -x+3/4,z,-y+1/4
+  -z+1/4,-y+3/4,x
+  -z+3/4,y,-x+1/4
+  z,-y+1/4,-x+3/4
+  z+1/2,y+1/2,x+1/2
+  x,y+1/2,z+1/2
+  -x+1/4,-y+1/4,z
+  -x+3/4,y,-z+3/4
+  x+1/2,-y+3/4,-z+1/4
+  z,x+1/2,y+1/2
+  z+1/2,-x+3/4,-y+1/4
+  -z+1/4,-x+1/4,y
+  -z+3/4,x,-y+3/4
+  y,z+1/2,x+1/2
+  -y+3/4,z,-x+3/4
+  y+1/2,-z+3/4,-x+1/4
+  -y+1/4,-z+1/4,x
+  y+3/4,x+3/4,-z+1/2
+  -y+1/2,-x,-z
+  y+1/4,-x+1/2,z+1/4
+  -y,x+1/4,z+3/4
+  x+3/4,z+3/4,-y+1/2
+  -x,z+1/4,y+3/4
+  -x+1/2,-z,-y
+  x+1/4,-z+1/2,y+1/4
+  z+3/4,y+3/4,-x+1/2
+  z+1/4,-y+1/2,x+1/4
+  -z,y+1/4,x+3/4
+  -z+1/2,-y,-x
+  -x,-y+1/2,-z+1/2
+  x+3/4,y+3/4,-z
+  x+1/4,-y,z+1/4
+  -x+1/2,y+1/4,z+3/4
+  -z,-x+1/2,-y+1/2
+  -z+1/2,x+1/4,y+3/4
+  z+3/4,x+3/4,-y
+  z+1/4,-x,y+1/4
+  -y,-z+1/2,-x+1/2
+  y+1/4,-z,x+1/4
+  -y+1/2,z+1/4,x+3/4
+  y+3/4,z+3/4,-x
+  -y+1/4,-x+1/4,z+1/2
+  y+1/2,x,z
+  -y+3/4,x+1/2,-z+3/4
+  y,-x+3/4,-z+1/4
+  -x+1/4,-z+1/4,y+1/2
+  x,-z+3/4,-y+1/4
+  x+1/2,z,y
+  -x+3/4,z+1/2,-y+3/4
+  -z+1/4,-y+1/4,x+1/2
+  -z+3/4,y+1/2,-x+3/4
+  z,-y+3/4,-x+1/4
+  z+1/2,y,x
+  x+1/2,y,z+1/2
+  -x+3/4,-y+3/4,z
+  -x+1/4,y+1/2,-z+3/4
+  x,-y+1/4,-z+1/4
+  z+1/2,x,y+1/2
+  z,-x+1/4,-y+1/4
+  -z+3/4,-x+3/4,y
+  -z+1/4,x+1/2,-y+3/4
+  y+1/2,z,x+1/2
+  -y+1/4,z+1/2,-x+3/4
+  y,-z+1/4,-x+1/4
+  -y+3/4,-z+3/4,x
+  y+1/4,x+1/4,-z+1/2
+  -y,-x+1/2,-z
+  y+3/4,-x,z+1/4
+  -y+1/2,x+3/4,z+3/4
+  x+1/4,z+1/4,-y+1/2
+  -x+1/2,z+3/4,y+3/4
+  -x,-z+1/2,-y
+  x+3/4,-z,y+1/4
+  z+1/4,y+1/4,-x+1/2
+  z+3/4,-y,x+1/4
+  -z+1/2,y+3/4,x+3/4
+  -z,-y+1/2,-x
+  -x+1/2,-y,-z+1/2
+  x+1/4,y+1/4,-z
+  x+3/4,-y+1/2,z+1/4
+  -x,y+3/4,z+3/4
+  -z+1/2,-x,-y+1/2
+  -z,x+3/4,y+3/4
+  z+1/4,x+1/4,-y
+  z+3/4,-x+1/2,y+1/4
+  -y+1/2,-z,-x+1/2
+  y+3/4,-z+1/2,x+1/4
+  -y,z+3/4,x+3/4
+  y+1/4,z+1/4,-x
+  -y+3/4,-x+3/4,z+1/2
+  y,x+1/2,z
+  -y+1/4,x,-z+3/4
+  y+1/2,-x+1/4,-z+1/4
+  -x+3/4,-z+3/4,y+1/2
+  x+1/2,-z+1/4,-y+1/4
+  x,z+1/2,y
+  -x+1/4,z,-y+3/4
+  -z+3/4,-y+3/4,x+1/2
+  -z+1/4,y,-x+3/4
+  z+1/2,-y+1/4,-x+1/4
+  z,y+1/2,x
+  x+1/2,y+1/2,z
+  -x+3/4,-y+1/4,z+1/2
+  -x+1/4,y,-z+1/4
+  x,-y+3/4,-z+3/4
+  z+1/2,x+1/2,y
+  z,-x+3/4,-y+3/4
+  -z+3/4,-x+1/4,y+1/2
+  -z+1/4,x,-y+1/4
+  y+1/2,z+1/2,x
+  -y+1/4,z,-x+1/4
+  y,-z+3/4,-x+3/4
+  -y+3/4,-z+1/4,x+1/2
+  y+1/4,x+3/4,-z
+  -y,-x,-z+1/2
+  y+3/4,-x+1/2,z+3/4
+  -y+1/2,x+1/4,z+1/4
+  x+1/4,z+3/4,-y
+  -x+1/2,z+1/4,y+1/4
+  -x,-z,-y+1/2
+  x+3/4,-z+1/2,y+3/4
+  z+1/4,y+3/4,-x
+  z+3/4,-y+1/2,x+3/4
+  -z+1/2,y+1/4,x+1/4
+  -z,-y,-x+1/2
+  -x+1/2,-y+1/2,-z
+  x+1/4,y+3/4,-z+1/2
+  x+3/4,-y,z+3/4
+  -x,y+1/4,z+1/4
+  -z+1/2,-x+1/2,-y
+  -z,x+1/4,y+1/4
+  z+1/4,x+3/4,-y+1/2
+  z+3/4,-x,y+3/4
+  -y+1/2,-z+1/2,-x
+  y+3/4,-z,x+3/4
+  -y,z+1/4,x+1/4
+  y+1/4,z+3/4,-x+1/2
+  -y+3/4,-x+1/4,z
+  y,x,z+1/2
+  -y+1/4,x+1/2,-z+1/4
+  y+1/2,-x+3/4,-z+3/4
+  -x+3/4,-z+1/4,y
+  x+1/2,-z+3/4,-y+3/4
+  x,z,y+1/2
+  -x+1/4,z+1/2,-y+1/4
+  -z+3/4,-y+1/4,x
+  -z+1/4,y+1/2,-x+1/4
+  z+1/2,-y+3/4,-x+3/4
+  z,y,x+1/2
+_symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
+1 0 0 0 1 0 0 0 1 0 0 0 
+-1 0 0 0 -1 0 0 0 1 0.25 0.75 0.5 
+-1 0 0 0 1 0 0 0 -1 0.75 0.5 0.25 
+1 0 0 0 -1 0 0 0 -1 0.5 0.25 0.75 
+0 0 1 1 0 0 0 1 0 0 0 0 
+0 0 1 -1 0 0 0 -1 0 0.5 0.25 0.75 
+0 0 -1 -1 0 0 0 1 0 0.25 0.75 0.5 
+0 0 -1 1 0 0 0 -1 0 0.75 0.5 0.25 
+0 1 0 0 0 1 1 0 0 0 0 0 
+0 -1 0 0 0 1 -1 0 0 0.75 0.5 0.25 
+0 1 0 0 0 -1 -1 0 0 0.5 0.25 0.75 
+0 -1 0 0 0 -1 1 0 0 0.25 0.75 0.5 
+0 1 0 1 0 0 0 0 -1 0.75 0.25 0 
+0 -1 0 -1 0 0 0 0 -1 0.5 0.5 0.5 
+0 1 0 -1 0 0 0 0 1 0.25 0 0.75 
+0 -1 0 1 0 0 0 0 1 0 0.75 0.25 
+1 0 0 0 0 1 0 -1 0 0.75 0.25 0 
+-1 0 0 0 0 1 0 1 0 0 0.75 0.25 
+-1 0 0 0 0 -1 0 -1 0 0.5 0.5 0.5 
+1 0 0 0 0 -1 0 1 0 0.25 0 0.75 
+0 0 1 0 1 0 -1 0 0 0.75 0.25 0 
+0 0 1 0 -1 0 1 0 0 0.25 0 0.75 
+0 0 -1 0 1 0 1 0 0 0 0.75 0.25 
+0 0 -1 0 -1 0 -1 0 0 0.5 0.5 0.5 
+-1 0 0 0 -1 0 0 0 -1 0 0 0 
+1 0 0 0 1 0 0 0 -1 0.75 0.25 0.5 
+1 0 0 0 -1 0 0 0 1 0.25 0.5 0.75 
+-1 0 0 0 1 0 0 0 1 0.5 0.75 0.25 
+0 0 -1 -1 0 0 0 -1 0 0 0 0 
+0 0 -1 1 0 0 0 1 0 0.5 0.75 0.25 
+0 0 1 1 0 0 0 -1 0 0.75 0.25 0.5 
+0 0 1 -1 0 0 0 1 0 0.25 0.5 0.75 
+0 -1 0 0 0 -1 -1 0 0 0 0 0 
+0 1 0 0 0 -1 1 0 0 0.25 0.5 0.75 
+0 -1 0 0 0 1 1 0 0 0.5 0.75 0.25 
+0 1 0 0 0 1 -1 0 0 0.75 0.25 0.5 
+0 -1 0 -1 0 0 0 0 1 0.25 0.75 0 
+0 1 0 1 0 0 0 0 1 0.5 0.5 0.5 
+0 -1 0 1 0 0 0 0 -1 0.75 0 0.25 
+0 1 0 -1 0 0 0 0 -1 0 0.25 0.75 
+-1 0 0 0 0 -1 0 1 0 0.25 0.75 0 
+1 0 0 0 0 -1 0 -1 0 0 0.25 0.75 
+1 0 0 0 0 1 0 1 0 0.5 0.5 0.5 
+-1 0 0 0 0 1 0 -1 0 0.75 0 0.25 
+0 0 -1 0 -1 0 1 0 0 0.25 0.75 0 
+0 0 -1 0 1 0 -1 0 0 0.75 0 0.25 
+0 0 1 0 -1 0 -1 0 0 0 0.25 0.75 
+0 0 1 0 1 0 1 0 0 0.5 0.5 0.5 
+1 0 0 0 1 0 0 0 1 0 0.5 0.5 
+-1 0 0 0 -1 0 0 0 1 0.25 0.25 0 
+-1 0 0 0 1 0 0 0 -1 0.75 0 0.75 
+1 0 0 0 -1 0 0 0 -1 0.5 0.75 0.25 
+0 0 1 1 0 0 0 1 0 0 0.5 0.5 
+0 0 1 -1 0 0 0 -1 0 0.5 0.75 0.25 
+0 0 -1 -1 0 0 0 1 0 0.25 0.25 0 
+0 0 -1 1 0 0 0 -1 0 0.75 0 0.75 
+0 1 0 0 0 1 1 0 0 0 0.5 0.5 
+0 -1 0 0 0 1 -1 0 0 0.75 0 0.75 
+0 1 0 0 0 -1 -1 0 0 0.5 0.75 0.25 
+0 -1 0 0 0 -1 1 0 0 0.25 0.25 0 
+0 1 0 1 0 0 0 0 -1 0.75 0.75 0.5 
+0 -1 0 -1 0 0 0 0 -1 0.5 0 0 
+0 1 0 -1 0 0 0 0 1 0.25 0.5 0.25 
+0 -1 0 1 0 0 0 0 1 0 0.25 0.75 
+1 0 0 0 0 1 0 -1 0 0.75 0.75 0.5 
+-1 0 0 0 0 1 0 1 0 0 0.25 0.75 
+-1 0 0 0 0 -1 0 -1 0 0.5 0 0 
+1 0 0 0 0 -1 0 1 0 0.25 0.5 0.25 
+0 0 1 0 1 0 -1 0 0 0.75 0.75 0.5 
+0 0 1 0 -1 0 1 0 0 0.25 0.5 0.25 
+0 0 -1 0 1 0 1 0 0 0 0.25 0.75 
+0 0 -1 0 -1 0 -1 0 0 0.5 0 0 
+-1 0 0 0 -1 0 0 0 -1 0 0.5 0.5 
+1 0 0 0 1 0 0 0 -1 0.75 0.75 0 
+1 0 0 0 -1 0 0 0 1 0.25 0 0.25 
+-1 0 0 0 1 0 0 0 1 0.5 0.25 0.75 
+0 0 -1 -1 0 0 0 -1 0 0 0.5 0.5 
+0 0 -1 1 0 0 0 1 0 0.5 0.25 0.75 
+0 0 1 1 0 0 0 -1 0 0.75 0.75 0 
+0 0 1 -1 0 0 0 1 0 0.25 0 0.25 
+0 -1 0 0 0 -1 -1 0 0 0 0.5 0.5 
+0 1 0 0 0 -1 1 0 0 0.25 0 0.25 
+0 -1 0 0 0 1 1 0 0 0.5 0.25 0.75 
+0 1 0 0 0 1 -1 0 0 0.75 0.75 0 
+0 -1 0 -1 0 0 0 0 1 0.25 0.25 0.5 
+0 1 0 1 0 0 0 0 1 0.5 0 0 
+0 -1 0 1 0 0 0 0 -1 0.75 0.5 0.75 
+0 1 0 -1 0 0 0 0 -1 0 0.75 0.25 
+-1 0 0 0 0 -1 0 1 0 0.25 0.25 0.5 
+1 0 0 0 0 -1 0 -1 0 0 0.75 0.25 
+1 0 0 0 0 1 0 1 0 0.5 0 0 
+-1 0 0 0 0 1 0 -1 0 0.75 0.5 0.75 
+0 0 -1 0 -1 0 1 0 0 0.25 0.25 0.5 
+0 0 -1 0 1 0 -1 0 0 0.75 0.5 0.75 
+0 0 1 0 -1 0 -1 0 0 0 0.75 0.25 
+0 0 1 0 1 0 1 0 0 0.5 0 0 
+1 0 0 0 1 0 0 0 1 0.5 0 0.5 
+-1 0 0 0 -1 0 0 0 1 0.75 0.75 0 
+-1 0 0 0 1 0 0 0 -1 0.25 0.5 0.75 
+1 0 0 0 -1 0 0 0 -1 0 0.25 0.25 
+0 0 1 1 0 0 0 1 0 0.5 0 0.5 
+0 0 1 -1 0 0 0 -1 0 0 0.25 0.25 
+0 0 -1 -1 0 0 0 1 0 0.75 0.75 0 
+0 0 -1 1 0 0 0 -1 0 0.25 0.5 0.75 
+0 1 0 0 0 1 1 0 0 0.5 0 0.5 
+0 -1 0 0 0 1 -1 0 0 0.25 0.5 0.75 
+0 1 0 0 0 -1 -1 0 0 0 0.25 0.25 
+0 -1 0 0 0 -1 1 0 0 0.75 0.75 0 
+0 1 0 1 0 0 0 0 -1 0.25 0.25 0.5 
+0 -1 0 -1 0 0 0 0 -1 0 0.5 0 
+0 1 0 -1 0 0 0 0 1 0.75 0 0.25 
+0 -1 0 1 0 0 0 0 1 0.5 0.75 0.75 
+1 0 0 0 0 1 0 -1 0 0.25 0.25 0.5 
+-1 0 0 0 0 1 0 1 0 0.5 0.75 0.75 
+-1 0 0 0 0 -1 0 -1 0 0 0.5 0 
+1 0 0 0 0 -1 0 1 0 0.75 0 0.25 
+0 0 1 0 1 0 -1 0 0 0.25 0.25 0.5 
+0 0 1 0 -1 0 1 0 0 0.75 0 0.25 
+0 0 -1 0 1 0 1 0 0 0.5 0.75 0.75 
+0 0 -1 0 -1 0 -1 0 0 0 0.5 0 
+-1 0 0 0 -1 0 0 0 -1 0.5 0 0.5 
+1 0 0 0 1 0 0 0 -1 0.25 0.25 0 
+1 0 0 0 -1 0 0 0 1 0.75 0.5 0.25 
+-1 0 0 0 1 0 0 0 1 0 0.75 0.75 
+0 0 -1 -1 0 0 0 -1 0 0.5 0 0.5 
+0 0 -1 1 0 0 0 1 0 0 0.75 0.75 
+0 0 1 1 0 0 0 -1 0 0.25 0.25 0 
+0 0 1 -1 0 0 0 1 0 0.75 0.5 0.25 
+0 -1 0 0 0 -1 -1 0 0 0.5 0 0.5 
+0 1 0 0 0 -1 1 0 0 0.75 0.5 0.25 
+0 -1 0 0 0 1 1 0 0 0 0.75 0.75 
+0 1 0 0 0 1 -1 0 0 0.25 0.25 0 
+0 -1 0 -1 0 0 0 0 1 0.75 0.75 0.5 
+0 1 0 1 0 0 0 0 1 0 0.5 0 
+0 -1 0 1 0 0 0 0 -1 0.25 0 0.75 
+0 1 0 -1 0 0 0 0 -1 0.5 0.25 0.25 
+-1 0 0 0 0 -1 0 1 0 0.75 0.75 0.5 
+1 0 0 0 0 -1 0 -1 0 0.5 0.25 0.25 
+1 0 0 0 0 1 0 1 0 0 0.5 0 
+-1 0 0 0 0 1 0 -1 0 0.25 0 0.75 
+0 0 -1 0 -1 0 1 0 0 0.75 0.75 0.5 
+0 0 -1 0 1 0 -1 0 0 0.25 0 0.75 
+0 0 1 0 -1 0 -1 0 0 0.5 0.25 0.25 
+0 0 1 0 1 0 1 0 0 0 0.5 0 
+1 0 0 0 1 0 0 0 1 0.5 0.5 0 
+-1 0 0 0 -1 0 0 0 1 0.75 0.25 0.5 
+-1 0 0 0 1 0 0 0 -1 0.25 0 0.25 
+1 0 0 0 -1 0 0 0 -1 0 0.75 0.75 
+0 0 1 1 0 0 0 1 0 0.5 0.5 0 
+0 0 1 -1 0 0 0 -1 0 0 0.75 0.75 
+0 0 -1 -1 0 0 0 1 0 0.75 0.25 0.5 
+0 0 -1 1 0 0 0 -1 0 0.25 0 0.25 
+0 1 0 0 0 1 1 0 0 0.5 0.5 0 
+0 -1 0 0 0 1 -1 0 0 0.25 0 0.25 
+0 1 0 0 0 -1 -1 0 0 0 0.75 0.75 
+0 -1 0 0 0 -1 1 0 0 0.75 0.25 0.5 
+0 1 0 1 0 0 0 0 -1 0.25 0.75 0 
+0 -1 0 -1 0 0 0 0 -1 0 0 0.5 
+0 1 0 -1 0 0 0 0 1 0.75 0.5 0.75 
+0 -1 0 1 0 0 0 0 1 0.5 0.25 0.25 
+1 0 0 0 0 1 0 -1 0 0.25 0.75 0 
+-1 0 0 0 0 1 0 1 0 0.5 0.25 0.25 
+-1 0 0 0 0 -1 0 -1 0 0 0 0.5 
+1 0 0 0 0 -1 0 1 0 0.75 0.5 0.75 
+0 0 1 0 1 0 -1 0 0 0.25 0.75 0 
+0 0 1 0 -1 0 1 0 0 0.75 0.5 0.75 
+0 0 -1 0 1 0 1 0 0 0.5 0.25 0.25 
+0 0 -1 0 -1 0 -1 0 0 0 0 0.5 
+-1 0 0 0 -1 0 0 0 -1 0.5 0.5 0 
+1 0 0 0 1 0 0 0 -1 0.25 0.75 0.5 
+1 0 0 0 -1 0 0 0 1 0.75 0 0.75 
+-1 0 0 0 1 0 0 0 1 0 0.25 0.25 
+0 0 -1 -1 0 0 0 -1 0 0.5 0.5 0 
+0 0 -1 1 0 0 0 1 0 0 0.25 0.25 
+0 0 1 1 0 0 0 -1 0 0.25 0.75 0.5 
+0 0 1 -1 0 0 0 1 0 0.75 0 0.75 
+0 -1 0 0 0 -1 -1 0 0 0.5 0.5 0 
+0 1 0 0 0 -1 1 0 0 0.75 0 0.75 
+0 -1 0 0 0 1 1 0 0 0 0.25 0.25 
+0 1 0 0 0 1 -1 0 0 0.25 0.75 0.5 
+0 -1 0 -1 0 0 0 0 1 0.75 0.25 0 
+0 1 0 1 0 0 0 0 1 0 0 0.5 
+0 -1 0 1 0 0 0 0 -1 0.25 0.5 0.25 
+0 1 0 -1 0 0 0 0 -1 0.5 0.75 0.75 
+-1 0 0 0 0 -1 0 1 0 0.75 0.25 0 
+1 0 0 0 0 -1 0 -1 0 0.5 0.75 0.75 
+1 0 0 0 0 1 0 1 0 0 0 0.5 
+-1 0 0 0 0 1 0 -1 0 0.25 0.5 0.25 
+0 0 -1 0 -1 0 1 0 0 0.75 0.25 0 
+0 0 -1 0 1 0 -1 0 0 0.25 0.5 0.25 
+0 0 1 0 -1 0 -1 0 0 0.5 0.75 0.75 
 0 0 1 0 1 0 1 0 0 0 0 0.5 
 Space group end
 
@@ -10268,4 +12385,3 @@ _symmetry_equiv_pos_as_matrix Xx Xy Xz Yx Yy Yz Zx Zy Zz XX YY ZZ
 0 0 1 0 1 0 1 0 0 0.75 0.75 0.75 
 Space group end
 
-File end

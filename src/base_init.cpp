@@ -264,7 +264,7 @@ void MainFrame::InitParametersPanel(){
   // this panel is used to set a distance between widgets and the border of the static box
   wxPanel *framePanel = new wxPanel(parameterPanel);
   {
-    unitCellCheckbox = new wxCheckBox(framePanel, CHECKBOX_UnitCell, "Analyze crystal unit cell (.pdb file required)");
+    unitCellCheckbox = new wxCheckBox(framePanel, CHECKBOX_UnitCell, "Analyze crystal unit cell (PDB or CIF file required)");
     surfaceAreaCheckbox = new wxCheckBox(framePanel, CHECKBOX_SurfaceArea, "Calculate surface areas");
     twoProbesCheckbox = new wxCheckBox(framePanel, CHECKBOX_TwoProbes, "Enable two-probe mode");
 

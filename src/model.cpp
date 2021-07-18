@@ -134,7 +134,7 @@ CalcReportBundle Model::generateVolumeData(){
     else{
       _cell.getVolume(_data.volumes, _data.cavities);
     }
-    
+
     // sort cavities by volume from largest to smallest
     inverseSort(_data.cavities);
     auto end = std::chrono::steady_clock::now();
@@ -338,7 +338,7 @@ bool Model::processUnitCell(){
   7) write structure file with processed atom list
   */
   double radius_limit = _data.grid_step + _max_atom_radius + 2*( (_data.probe_mode) ? getProbeRad2() : getProbeRad1() );
-  if(_space_group == ""){
+  if(fileExtension(_data.atom_file_path) == "pdb" && _space_group == ""){
     Ctrl::getInstance()->displayErrorMessage(111);
     return false;
   }
@@ -419,11 +419,11 @@ void Model::orthogonalizeUnitCell(){
 
 // 2) create symmetry elements from base structure
 bool Model::symmetrizeUnitCell(){
-  std::vector<int> sym_matrix_XYZ;
-  std::vector<double> sym_matrix_fraction;
-  if(!getSymmetryElements(_space_group, sym_matrix_XYZ, sym_matrix_fraction)){
-    Ctrl::getInstance()->displayErrorMessage(113);
-    return false;
+  if(fileExtension(_data.atom_file_path) == "pdb"){
+    if(!getSymmetryElements(_space_group, _sym_matrix_XYZ, _sym_matrix_fraction)){
+      Ctrl::getInstance()->displayErrorMessage(113);
+      return false;
+    }
   }
   /* To convert cartesian coordinates x y z in unit cell coordinates a b c:
   c = z/Cz
@@ -434,7 +434,7 @@ bool Model::symmetrizeUnitCell(){
   */
   std::vector<std::tuple<std::string, double, double, double>> ABC_coord;
   int atom_number = _processed_atom_coordinates.size();
-  int sym_number = sym_matrix_XYZ.size()/9;
+  int sym_number = _sym_matrix_XYZ.size()/9;
   for (int i = 0; i < atom_number; i++){
     double atom_x = std::get<1>(_processed_atom_coordinates[i]);
     double atom_y = std::get<2>(_processed_atom_coordinates[i]);
@@ -446,9 +446,9 @@ bool Model::symmetrizeUnitCell(){
     for (int j = 0; j < sym_number; j++){
       double sym_abc[3];
       for (int k = 0; k < 3; k++){
-        sym_abc[k] = sym_matrix_fraction[3*j+k];
+        sym_abc[k] = _sym_matrix_fraction[3*j+k];
         for (int n = 0; n < 3; n++){
-          sym_abc[k] += sym_matrix_XYZ[9*j+3*k+n]*atom_abc[n];
+          sym_abc[k] += _sym_matrix_XYZ[9*j+3*k+n]*atom_abc[n];
         }
       }
       ABC_coord.emplace_back(std::get<0>(_processed_atom_coordinates[i]), sym_abc[0], sym_abc[1], sym_abc[2]);

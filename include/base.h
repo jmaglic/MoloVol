@@ -165,7 +165,7 @@ class MainFrame: public wxFrame, public wxThreadHelper
     void InitDefaultStates();
     std::map<wxWindow*, bool> default_states;
     void setDefaultState(wxWindow*, bool);
-    void toggleOptionsPdb();
+    void toggleOptionsFiletype();
     void toggleButtons();
 
     // methods to initialise gui

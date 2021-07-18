@@ -48,11 +48,9 @@ void Model::createReport(std::string path){
   output_report << "\t// Calculation parameters //\n";
   output_report << "\t////////////////////////////\n\n";
   if(fileExtension(_data.atom_file_path) == "pdb"){
-    if(_data.analyze_unit_cell){
-      output_report << "Analyze crystal structure unit cell\n";
-    }
     output_report << std::string((_data.inc_hetatm)? "Include" : "Exclude") + " HETATM from pdb file\n";
   }
+  output_report << "Crystal unit cell analysis: " + std::string((_data.analyze_unit_cell)? "Yes" : "No") + "\n";
   if(_data.probe_mode){
     output_report << "Probe mode: two probes\n";
     output_report << "Small probe radius: " << getProbeRad1() << " A\n";
@@ -62,8 +60,8 @@ void Model::createReport(std::string path){
     output_report << "Probe mode: one probe\n";
     output_report << "Probe radius: " << getProbeRad1() << " A\n";
   }
-  output_report << "Grid step size (resolution): " << _data.grid_step << " A\n";
-  output_report << "Maximum tree depth (algorithm acceleration): " << _data.max_depth << "\n";
+  output_report << "Grid resolution: " << _data.grid_step << " A\n";
+  output_report << "Optimization depth: " << _data.max_depth << "\n";
   output_report << "Elements radii:\n";
   for(std::unordered_map<std::string, double>::iterator it = _radius_map.begin(); it != _radius_map.end(); it++){
     if(isIncluded(it->first, _data.included_elements)){
@@ -172,10 +170,10 @@ void Model::createReport(std::string path){
       output_report << "To solve this issue, change probe radii (e.g. smaller large probe and/or larger small probe).\n\n";
     }
     output_report << "Note 1:\tPockets and isolated cavities are not differentiated yet.\n";
-    output_report << "\tThis feature might be added in future versions if requested by the community.\n";
+    output_report << "\tThis feature might be added in future versions.\n";
     output_report << "Note 2:\tSeparate cavities are defined by space accessible to the core of the small probe.\n";
     output_report << "\tTwo cavities can be in contact but if a probe cannot pass from one to the other, they are considered separated.\n";
-    output_report << "Note 3:\tIn single probe mode, the first 'cavity' consists of the outside space and pockets.\n";
+    output_report << "Note 3:\tIn single probe mode, pockets are counted in the 'outside space'.\n";
     output_report << "Note 4:\tSome very small isolated chunks of small probe cores can be detected and lead to small cavities.\n";
     output_report << "Note 5:\tProbe occupied volume correspond to empty space as defined by the molecular surface (similar to the Connolly surface).\n";
     output_report << "Note 6:\tProbe accessible volume correspond to empty space as defined\n";

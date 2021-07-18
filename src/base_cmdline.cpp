@@ -180,7 +180,7 @@ bool validateExport(const std::string out_dir, const std::vector<bool> exp_optio
 }
 
 bool validatePdb(const std::string file, const bool hetatm, const bool unitcell){
-  if (fileExtension(file) != "pdb" && (hetatm || unitcell)){
+  if ((fileExtension(file) != "pdb" && fileExtension(file) != "cif") && (hetatm || unitcell)){
     Ctrl::getInstance()->displayErrorMessage(115);
     return false;
   }

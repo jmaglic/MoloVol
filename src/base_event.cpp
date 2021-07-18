@@ -142,10 +142,10 @@ void MainFrame::OnLoadFiles(wxCommandEvent& event){
 
 // browse for atom file
 void MainFrame::OnAtomBrowse(wxCommandEvent& event){
-  std::string filetype = "XYZ and PDB files (*.xyz;*.pdb)|*.xyz;*pdb";
+  std::string filetype = "XYZ, PDB, CIF files (*.xyz;*.pdb;*.cif)|*.xyz;*pdb;*.cif";
   OnBrowse(event, filetype, filepathText);
-  // if user selects a .pdb file, then the .pdf file options are unlocked
-  toggleOptionsPdb();
+  // if user selects a .pdb or .cif file, then the related options are unlocked
+  toggleOptionsFiletype();
   enableGuiElements(true);
 }
 
@@ -334,10 +334,11 @@ void MainFrame::setDefaultState(wxWindow* widget, bool state){
   default_states[widget] = state;
 }
 
-void MainFrame::toggleOptionsPdb(){
-  setDefaultState(pdbHetatmCheckbox, fileExtension(getAtomFilepath()) == "pdb" );
-  setDefaultState(unitCellCheckbox, fileExtension(getAtomFilepath()) == "pdb" );
-  if(fileExtension(getAtomFilepath()) != "pdb"){
+void MainFrame::toggleOptionsFiletype(){
+  std::string file_type = fileExtension(getAtomFilepath());
+  setDefaultState(pdbHetatmCheckbox, file_type == "pdb" );
+  setDefaultState(unitCellCheckbox, file_type == "pdb" || file_type == "cif" );
+  if(file_type != "pdb" && file_type != "cif"){
     unitCellCheckbox->SetValue(false);
   }
 }
